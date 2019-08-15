@@ -12,12 +12,12 @@ body
 	width: 100%;
 	
 	
-	background-image:url(../bg.jpg); 
+	background-image:url(../background.jpg);
 	
 	
-	background-size: 1400px 500px;
+	background-size: 1350px 500px;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	
 }
 .inner_main_menu
 {
@@ -62,6 +62,7 @@ body
 	padding: 10px 20px;
 
 }
+
 #main_menu
 {
 	width: 100%;
