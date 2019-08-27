@@ -1,0 +1,100 @@
+
+
+
+.vertical-menu1 a{
+  background-color: #6C3483;
+  
+  display: block;
+  padding: 30px;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+}
+
+.vertical-menu2 a{
+  background-color: red;
+  
+  display: block;
+  padding: 30px;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+}
+.vertical-menu3 a{
+  background-color: #fc5203;
+  
+  display: block;
+  padding: 30px;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+}
+.vertical-menu4 a{
+  background-color: #3498DB;
+  
+  display: block;
+  padding: 30px;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+}
+.vertical-menu5 a{
+  background-color: #a89a02;
+  
+  display: block;
+  padding: 30px;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+}
+
+input[type=text], select, textarea {
+  
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=Calculate] {
+  background-color
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=Calculate]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  
+  padding: 20px;
+  width: 100%;
+}
+
+.col-25 {
+  float: left;
+  
+  margin-top: 6px;
+}
+
+
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+

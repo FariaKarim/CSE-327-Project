@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+.box1 {
+  padding: 50px;
+  background-color: #6C3483;
+  transition: transform .2s;
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  margin-left: 250px;
+  margin-top: 100px;
+  
+}
+
+.box1:hover {
+  -ms-transform: scale(1.30); /* IE 9 */
+  -webkit-transform: scale(1.30); /* Safari 3-8 */
+  transform: scale(1.30); 
+}
+.box2 {
+  
+  background-color: red;
+  transition: transform .2s;
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  margin-left: 600px;
+  margin-top: 100px;
+   
+  
+}
+
+.box2:hover {
+  -ms-transform: scale(1.30); /* IE 9 */
+  -webkit-transform: scale(1.30); /* Safari 3-8 */
+  transform: scale(1.30);
+}
+.box3 {
+  padding: 50px;
+  background-color: #fc5203;
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  margin-left: 250px;
+  margin-top: 350px;
+   
+  
+}
+
+.box3:hover {
+  -ms-transform: scale(1.25); /* IE 9 */
+  -webkit-transform: scale(1.25); /* Safari 3-8 */
+  transform: scale(1.25); 
+}
+.box4 {
+  padding: 50px;
+  background-color: #3498DB;
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  margin-left: 475px;
+  margin-top: 350px;
+   
+  
+}
+
+.box4:hover {
+  -ms-transform: scale(1.25); /* IE 9 */
+  -webkit-transform: scale(1.25); /* Safari 3-8 */
+  transform: scale(1.25);  
+}
+.box5 {
+  padding: 50px;
+  background-color: #a89a02;
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  margin-left: 700px;
+  margin-top: 350px;
+   
+  
+}
+
+.box5:hover {
+  -ms-transform: scale(1.25); /* IE 9 */
+  -webkit-transform: scale(1.25); /* Safari 3-8 */
+  transform: scale(1.25); 
+}
+
