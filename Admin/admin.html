@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GoodLife</title>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compitable" content="IE-edge">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+  
+  <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Oswald:400">
+
+
+  <link rel="stylesheet" type="text/css" href="navbar.css">
+  <link rel="stylesheet" type="text/css" href="sidebar.css">
+   <link rel="stylesheet" type="text/css" href="table.css">
+ 
+
+    <link rel="stylesheet" type="text/css" href="footer.css">
+
+    
+</head>
+
+</head>
+<body>
+<script src="search.js"></script>
+   <div id="main_menu">
+    <div class="logo_area">
+      <a href=""><img height="120px" width="140px" src="logo.png"></a>
+    </div>
+    <div class="inner_main_menu" >
+    <ul>
+      <li><a href="#">ADMIN PANEL</a></li>
+      <!-- dropdown menu-->
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FORUM<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"style="color:#FF4B4B;">Discussion Forum</a></li>
+          <li><a href="#"style="color:#FF4B4B;">Live Video</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">RESOURCES<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"style="color:#FF4B4B;">Health Calculations</a></li>
+          <li><a href="#"style="color:#FF4B4B;">List of Informations</a></li>
+          <li><a href="#"style="color:#FF4B4B;">Food Nutrients</a></li>
+        </ul>
+      </li>
+      <li><a href="#">BLOOD DONATION</a></li>
+      <!-- notification icon -->
+      <li><a href="#"><img src="notification.png" style="height: 35px; width: 35px"></a></li>
+      <!-- end of notification icon -->
+      <li><a href="#">SIGN UP</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- main body start-->
+<!-- sidebar start -->
+   <div class="sidenav">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
+  <a href="#contact">Contact</a>
+</div>
+<!-- sidebar end -->
+<!-- table start -->
+<h2>My Customers</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<button type="button" class="btn btn-default" style="background-color: #ffe6e6;margin-left: 250px;border-color: red;height: 50px;width: 100px">ADD</button>
+<br>
+<br>
+<table id="myTable">
+  <tr class="header">
+    <th style="width:20%;">Food Name</th>
+    <th style="width:20%;">Calorie</th>
+    <th style="width:20%;">Fat</th>
+    <th style="width:20%;">Protein</th>
+    <th style="width:20%;">Carbohydrate</th>
+    <th style="width:20%;">Want to delete?</th>
+  </tr>
+  <tr>
+    <td>Egg</td>
+    <td>12 kcal</td>
+    <td>0.85 g</td>
+    <td>1.01 g</td>
+    <td>0.09 g</td>
+    <td><button type="button" class="btn btn-danger" style="height: 50px;width: 100px">Yes</button></td>
+  </tr>
+  <tr>
+    <td>Blueberries</td>
+    <td>39 kcal</td>
+    <td>0.50 g</td>
+    <td>0.22 g</td>
+    <td>9.85 g</td>
+  </tr>
+  <tr>
+    <td>Carrots</td>
+    <td>1 kcal</td>
+    <td>0.01 g</td>
+    <td>0.03 g</td>
+    <td>0.29 g</td>
+  </tr>
+  <tr>
+    <td>Cucumber</td>
+    <td>8 kcal</td>
+    <td>0.06 g</td>
+    <td>0.34 g</td>
+    <td>1.89 g</td>
+  </tr>
+  
+</table>
+<!-- table end -->
+
+
+ <!-- end of main body-->
+  
+<!-- footer start -->
+<footer style="margin-top: 500px">
+  <div style="background-color:#ffe6e6">
+  <img src="logo.png" style="height: 150px">
+  <div class="word">
+  <p style="color: black; font-size: 20px; top: 5px">Our mission is to provide maximum health related benefit to our users</p>
+</div>
+  <a href=""><button type="button" class="btn btn-danger btn-lg">Our Team</button></a>
+  <br>
+  <br>
+  <br>
+
+  </div>
+<a href="#" class="fab fa-facebook-f"></a>
+<a href="#" class="fab fa-twitter"></a>
+<a href="#" class="fab fa-google"></a>
+<a href="#" class="fab fa-instagram"></a>
+<p>© 2018 Copyright: goodLife.com</p>
+
+ </footer>
+<!-- footer end -->
+</body>
+</html>

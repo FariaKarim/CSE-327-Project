@@ -1,0 +1,81 @@
+body
+{
+	background : no-repeat scroll 0 0;
+	font-family: 'Oswald' , sans-serif;
+    font-size: 15px;
+    margin-top:0;
+    margin-right: 0;
+    margin-left: 0;
+    font-weight: 400em;
+   line-height: 1.5em;
+   position: relative;
+	width: 100%;
+	
+	
+	
+	
+	
+	background-size: 1350px 500px;
+	background-repeat: no-repeat;
+	
+}
+.inner_main_menu
+{
+	margin: 0 auto;
+	width: 100%;
+
+	
+}
+
+.inner_main_menu ul
+{
+	margin:  0 ;
+	padding: 10px 0 0;
+	 list-style: none; 
+	text-align: right; 
+}
+.inner_main_menu ul li
+{
+	float: none;
+	display: inline-block;
+}
+.inner_main_menu ul li:nth-child(1)
+{
+	float: left;
+}
+.inner_main_menu ul li:nth-child(2)
+{
+	float: left;
+}
+.inner_main_menu ul li:nth-child(3)
+{
+	float: left;
+}
+
+.inner_main_menu ul li a
+{
+	color: white;
+	font-size: 20px;
+	 text-transform:uppercase;
+	text-decoration: none;
+	display: block;
+	padding: 10px 20px;
+
+}
+
+#main_menu
+{
+	width: 100%;
+	position: relative;
+	background-color: #FF4B4B;
+}
+.logo_area
+{
+	width:300px;
+	height: 300px;
+	position: absolute;
+	left: 50%;
+	top:0;
+	margin-left: -150px;
+	text-align: center;
+}
