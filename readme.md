@@ -1,4 +1,4 @@
-# Transport System
+# GoodLife
 
 *  Install xampp and composer for windows
 *  Run "composer install" after cloning the repo
