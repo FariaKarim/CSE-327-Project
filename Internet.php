@@ -1,11 +1,16 @@
 <?php
 
-namespace Faker\Provider\sl_SI;
+namespace Faker\Provider\zh_TW;
 
 class Internet extends \Faker\Provider\Internet
 {
+    public function userName()
+    {
+        return \Faker\Factory::create('en_US')->userName();
+    }
 
-    protected static $freeEmailDomain = array('gmail.com', 'gmail.com', 'gmail.com', 'hotmail.com', 'yahoo.com', 'siol.net', 't-2.net');
-
-    protected static $tld = array('si', 'si', 'si', 'si', 'eu', 'com', 'info', 'net', 'org');
+    public function domainWord()
+    {
+        return \Faker\Factory::create('en_US')->domainWord();
+    }
 }
