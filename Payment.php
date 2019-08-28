@@ -1,9 +1,23 @@
 <?php
 
-namespace Faker\Provider\fi_FI;
+namespace Faker\Provider\kk_KZ;
 
 class Payment extends \Faker\Provider\Payment
 {
+
+    protected static $banks = array(
+        'Қазкоммерцбанк',
+        'Халық Банкі',
+    );
+
+    /**
+     * @example 'Қазкоммерцбанк'
+     */
+    public static function bank()
+    {
+        return static::randomElement(static::$banks);
+    }
+
     /**
      * International Bank Account Number (IBAN)
      * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number
@@ -12,7 +26,7 @@ class Payment extends \Faker\Provider\Payment
      * @param  integer $length      total length without country code and 2 check digits
      * @return string
      */
-    public static function bankAccountNumber($prefix = '', $countryCode = 'FI', $length = null)
+    public static function bankAccountNumber($prefix = '', $countryCode = 'KZ', $length = null)
     {
         return static::iban($countryCode, $prefix, $length);
     }

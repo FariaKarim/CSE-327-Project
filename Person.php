@@ -1,145 +1,55 @@
 <?php
 
-namespace Faker\Provider\fi_FI;
+namespace Faker\Provider\ko_KR;
 
 class Person extends \Faker\Provider\Person
 {
+    /**
+     * This provider uses wikipedia's top Korean last names. These cover more than 90% of Korean population.
+     */
+
     protected static $maleNameFormats = array(
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{titleMale}} {{firstNameMale}} {{lastName}}',
+        '{{lastName}}{{firstNameMale}}',
     );
 
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-        '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
+        '{{lastName}}{{firstNameFemale}}',
     );
 
+    /**
+     * {@link} http://ko.wikipedia.org/wiki/%ED%95%9C%EA%B5%AD%EC%9D%98_%EC%84%B1%EC%94%A8%EC%99%80_%EC%9D%B4%EB%A6%84#.EC.8B.9C.EB.8C.80.EB.B3.84_.EA.B0.80.EC.9E.A5_.ED.9D.94.ED.95.9C_.EC.9D.B4.EB.A6.84_10.EC.84.A0.28.E9.81.B8.29
+     */
     protected static $firstNameMale = array(
-         'Aleksi', 'Anssi', 'Antero', 'Antti', 'Ari', 'Arttu', 'Daniel', 'Eero', 'Eetu', 'Elias', 'Elmo', 'Emil', 'Erkki',
-        'Hampus', 'Hannu', 'Harri', 'Heikki', 'Helmi', 'Henri', 'Hermanni', 'Ilja', 'Jaakko', 'Jake', 'Jani', 'Janne',
-        'Jari', 'Jarno', 'Jere', 'Jeremy', 'Jesper', 'Jesse', 'Jimi', 'Joakim', 'Joel', 'Joona', 'Joonas', 'Juha',
-        'Juho', 'Jukka', 'Julius', 'Jussi', 'Justus', 'Juuso', 'Kalle', 'Kasperi', 'Konsta', 'Kristian', 'Lassi', 'Leevi',
-        'Leo', 'Levin', 'Luca', 'Lukas', 'Magnus', 'Marko', 'Markus', 'Matias', 'Matti', 'Miika', 'Mika', 'Mikael',
-        'Mikko', 'Neo', 'Nico', 'Niklas', 'Niko', 'Oliver', 'Oskari', 'Ossi', 'Otto', 'Paavo', 'Pasi', 'Patrik',
-        'Paulus', 'Peetu', 'Pekka', 'Pertti', 'Petri', 'Petteri', 'Pyry', 'Rami', 'Rasmus', 'Riku', 'Risto', 'Roope',
-        'Saku', 'Sami', 'Samu', 'Samuel', 'Samuli', 'Santeri', 'Taneli', 'Tatu', 'Teemu', 'Teppo', 'Tero', 'Timo',
-        'Tomi', 'Tommi', 'Topi', 'Touko', 'Tuomas', 'Tuomo', 'Tuukka', 'Tuukka', 'Valtteri', 'Veli', 'Viljo', 'Ville',
-        'Aake', 'Aapeli', 'Aapo', 'Aappo', 'Aarni', 'Aaro', 'Aatto', 'Aatu', 'Akseli', 'Aku', 'Antton', 'Artturi',
-        'Aune', 'Beeda', 'Briitta', 'Eeli', 'Eelis', 'Eemeli', 'Ekku', 'Eljas', 'Erkko', 'Iiro', 'Ilmari', 'Isto',
-        'Jirko', 'Joonatan', 'Jore', 'Junnu', 'Jusu', 'Kaste', 'Kauto', 'Luukas', 'Nuutti', 'Onni', 'Osmo', 'Pekko',
-        'Sampo', 'Santtu', 'Sauli', 'Simo', 'Sisu', 'Teijo', 'Unto', 'Urho', 'Veeti', 'Veikko', 'Vilho', 'Werneri', 'Wiljami',
-
+        '건우', '건호', '경석', '경수', '경춘', '경환', '광수', '광현', '구범', '규산', '기수', '남수', '남호', '대선', '대수', '도윤',
+        '도현', '동윤', '동하', '동현', '명식', '명호', '문용', '문창', '민석', '민성', '민수', '민재', '민준', '민철', '민환', '병철',
+        '병호', '상선', '상수', '상우', '상욱', '상준', '상철', '상현', '상호', '상훈', '서준', '서호', '선엽', '성곤', '성령', '성민',
+        '성수', '성진', '성현', '성호', '성훈', '수원', '승민', '승현', '승호', '시우', '영길', '영수', '영식', '영일', '영진', '영철',
+        '영하', '영호', '영환', '예준', '용태', '용환', '용훈', '우진', '원준', '원진', '원희', '은성', '은택', '인규', '재윤', '재철',
+        '재혁', '재현', '재호', '재훈', '정남', '정수', '정식', '정웅', '정호', '정훈', '종수', '종주', '종훈', '주원', '주형', '준',
+        '준범', '준서', '준영', '준혁', '준형', '준호', '중수', '지후', '지훈', '진수', '진우', '진호', '창용', '채현', '태현', '태호',
+        '혁상', '현규', '현우', '현종', '현준', '형민', '형철', '호민', '호진', '홍선', '효일',
     );
 
     protected static $firstNameFemale = array(
-        'Aada', 'Ada', 'Aina', 'Aino', 'Aki', 'Aliisa', 'Amalia', 'Amanda', 'Amelia', 'Amira', 'Anissa', 'Anita', 'Anna',
-        'Anne', 'Anni', 'Anniina', 'Annu', 'Anu', 'Asta', 'Atte', 'Atte', 'Aura', 'Aurora', 'Bella', 'Cara',
-        'Celina', 'Christa', 'Christel', 'Clara', 'Cornelia', 'Dani', 'Eija', 'Elea', 'Elina', 'Elisa', 'Elise', 'Ella',
-        'Ellen', 'Elma', 'Emilia', 'Emma', 'Emmi', 'Enna', 'Erja', 'Esa', 'Essi', 'Eva', 'Eveliina', 'Fanni',
-        'Fiona', 'Hanna', 'Heidi', 'Heli', 'Helinä', 'Henna', 'Hilda', 'Hilja', 'Hilla', 'Hilma', 'Iida', 'Iina',
-        'Iiris', 'Ilona', 'Inka', 'Inkeri', 'Inna', 'Isabella', 'Jade', 'Jami', 'Janette', 'Janika', 'Janina', 'Janita',
-        'Janna', 'Janni', 'Jasmiina', 'Jenna', 'Jenni', 'Jessica', 'Johanna', 'Joni', 'Jonna', 'Julia', 'Juulia', 'Kaija',
-        'Karla', 'Karri', 'Kati', 'Katja', 'Katri', 'Kia', 'Kimi', 'Kirsi', 'Krista', 'Lari', 'Laura', 'Lauri',
-        'Lea', 'Lila', 'Linnea', 'Lotta', 'Lumina', 'Maarit', 'Maia', 'Maija', 'Maiju', 'Maisa', 'Mari', 'Maria',
-        'Meeri', 'Meri', 'Mette', 'Mia', 'Milla', 'Mimi', 'Mimosa', 'Minna', 'Mira', 'Mirella', 'Miska', 'Nadja',
-        'Natalia', 'Nea', 'Neea', 'Nella', 'Nia', 'Niina', 'Noora', 'Olga', 'Olivia', 'Oona', 'Outi', 'Paula',
-        'Pauliina', 'Petra', 'Pia', 'Piia', 'Pinja', 'Päivi', 'Reeta', 'Reetta', 'Riikka', 'Riina', 'Ritva', 'Roni',
-        'Ronja', 'Sanna', 'Sari', 'Satu', 'Seija', 'Sirpa', 'Siru', 'Susanna', 'Tanja', 'Tara', 'Taru', 'Tea',
-        'Terhi', 'Tiia', 'Tiina', 'Tiiu', 'Tinja', 'Veera', 'Vili', 'Vilma', 'Wilma', 'Aamu', 'Aliina', 'Annilotta',
-        'Eerika', 'Eeva', 'Eevi', 'Eliina', 'Elviira', 'Emmaliina', 'Enni', 'Ennika', 'Helmiina', 'Henniina',
-        'Hertta', 'Hilppa', 'Iia', 'Iita', 'Jadessa', 'Jemina', 'Jenika', 'Jermia', 'Jooa', 'Juttamari', 'Kaisla',
-        'Kaisu', 'Loviisa', 'Malla', 'Martta', 'Matleena', 'Miina', 'Mimmu', 'Minea', 'Minttu', 'Mirva', 'Nelli', 'Ninni',
-        'Oliivia', 'Peppi', 'Pihla', 'Pirkko', 'Riia', 'Roosa', 'Taika', 'Venla', 'Viivi', 'Vilja',
+        '가람', '강은', '강희', '경은', '경주', '근영', '기연', '나루', '나리', '나연', '나은', '나형', '누리', '다영', '도연', '동현',
+        '미경', '미라', '미란', '미영', '미정', '민서', '민아', '민지', '민형', '민희', '반희', '보람', '보미', '보민', '봄', '상명',
+        '새미', '서연', '서영', '서윤', '서현', '선영', '선우', '선정', '선호', '성미', '성민', '성은', '세원', '소민', '소연', '소영',
+        '소정', '수란', '수민', '수빈', '수연', '수원', '수정', '수진', '순항', '슬기', '시은', '신애', '아름', '아린', '여진', '연선',
+        '연희', '영진', '영화', '예원', '예은', '예지', '예진', '유리', '유정', '유진', '윤경', '윤미', '윤서', '윤영', '은경', '은미',
+        '은상', '은서', '은애', '은영', '은정', '은주', '은지', '은진', '은형', '은혜', '은희', '인화', '재연', '정란', '정민', '정은',
+        '정화', '주명', '주미', '주연', '주희', '지민', '지선', '지숙', '지아', '지연', '지영', '지예', '지우', '지원', '지은', '지현',
+        '지혜', '지희', '진아', '진희', '채원', '태희', '하나', '하윤', '하은', '한나', '헤선', '현영', '현정', '현주', '현지', '혜나',
+        '혜림', '혜민', '혜숙', '혜연', '혜진', '효진', '희경', '희원',
     );
 
-    protected static $lastName = array(
-        'Aakula', 'Aalto', 'Aaltonen', 'Aarnio', 'Aaronen', 'Aavikkola', 'Ahmala', 'Aho', 'Ahokas', 'Ahola', 'Ahomaa', 'Ahonen', 'Ahoniemi', 'Ahopelto', 'Ahovaara', 'Ahtila', 'Ahtiluoto', 'Ahtio', 'Ahtisaari', 'Ahto', 'Ahtola', 'Ahtonen', 'Ahtorinne', 'Aija', 'Aijala', 'Ainola', 'Aitio', 'Aitolahti', 'Aitomaa', 'Aittasalmi', 'Akkala', 'Akkanen', 'Alahuhta', 'Alajoki', 'Alajärvi', 'Alanen', 'Alatalo', 'Alasalmi', 'Alapuro', 'Alhola', 'Alijoki', 'Ankkala', 'Ankkuri', 'Annala', 'Annunen', 'Anttila', 'Anttinen', 'Anttonen', 'Ara', 'Arhila', 'Arhinmäki', 'Arhosuo', 'Arinen', 'Arjamaa', 'Arjanen', 'Arkkila', 'Armio', 'Arnio', 'Aronen', 'Arosuo', 'Arponen', 'Arvola', 'Asikainen', 'Astala', 'Attila', 'Aunela', 'Aura', 'Auramies', 'Auranen', 'Autio', 'Auvinen', 'Auvola', 'Avonius', 'Avotie',
-        'Bräysy',
-        'Davidsainen', 'Dufva',
-        'Eerikäinen', 'Eerola', 'Einel', 'Eino', 'Einola', 'Einonen', 'Ekman', 'Ekola', 'Ellilä', 'Ellinen', 'Elomaa', 'Eloharju', 'Eloranta', 'Eno', 'Enola', 'Enäjärvi', 'Erkinjuntti', 'Erkkilä', 'Erkkinen', 'Erkko', 'Erkkola', 'Ernamo', 'Erola', 'Eronen', 'Ervola', 'Eräharju', 'Erämaja', 'Eränen', 'Eskelinen', 'Eskelä', 'Eskola', 'Evelä', 'Evilä',
-        'Filppula', 'Finni', 'Frändilä', 'Fränti',
-        'Haahka', 'Haahkola', 'Haanpää', 'Haapakorpi', 'Haapala', 'Haapanen', 'Haaparanta', 'Haapasalmi', 'Haapasalo', 'Haapkylä', 'Haapoja', 'Haataja', 'Haavisto', 'Haikala', 'Haikara', 'Hakala', 'Hakkarainen', 'Hakki', 'Hakula', 'Halinen', 'Halkola', 'Halkonen', 'Halla', 'Hallaper', 'Hallapuro', 'Hallikainen', 'Hallila', 'Hallonen', 'Halme', 'Halmela', 'Halmelahti', 'Halonen', 'Halttunen', 'Hammas', 'Hanhela', 'Hanhinen', 'Hannula', 'Hannunen', 'Hapola', 'Harjamäki', 'Harju', 'Harjula', 'Harjunpää', 'Harkimo', 'Hautakangas', 'Hautakoski', 'Hautala', 'Hautamäki', 'Haverinen', 'Havukoski', 'Heikkilä', 'Heikkinen', 'Heimola', 'Heinälä', 'Heiskanen', 'Heiskari', 'Helenius', 'Helinen', 'Helismaa', 'Helmel', 'Helovirta', 'Helppolainen', 'Helstel', 'Hellgren', 'Hentinen', 'Hento', 'Hepomäki', 'Heponen', 'Herranen', 'Hervanta', 'Hervanto', 'Hekkaharju', 'Hiesu', 'Hietala', 'Hietanen', 'Hiltunen', 'Heintikainen', 'Hirvelä', 'Hirvi', 'Hirvikangas', 'Hirvonen', 'Hoikkala', 'Hoikkanen', 'Holappa', 'Holkeri', 'Hongisto', 'Honkanen', 'Hovi', 'Huhta', 'Huhtala', 'Hukkala', 'Huopainen', 'Huotari', 'Huovinen', 'Huttunen', 'Huuhka', 'Huurinainen', 'Huusko', 'Huvinen', 'Hyppölä', 'Hyppönen', 'Hytölä', 'Hyypiä', 'Hyyppä', 'Häkkinen', 'Häkämies', 'Hämäläinen', 'Hänninen', 'Härkönen',
-        'Ihalainen', 'Ikola', 'Ikonen', 'Ilmarinen', 'Ilomäki', 'Iloniemi', 'Ilvesniemi', 'Immonen', 'Inkeri', 'Inkinen', 'Isoluoma', 'Isomäki', 'Isotalo', 'Itkonen', 'Itävaara', 'Itävuori',
-        'Jaakkola', 'Jaakkonen', 'Jaakonmaa', 'Jaatinen', 'Jakkila', 'Jalonen', 'Jauhiainen', 'Jauho', 'Joenhaara', 'Johto', 'Jokelainen', 'Jokihaara', 'Jokimies', 'Jokinen', 'Jortikka', 'Joru', 'Junkkari', 'Juntti', 'Juppi', 'Jurva', 'Jurvala', 'Jurvanen', 'Jussila', 'Juustinen', 'Juuti', 'Juvanen', 'Juvonen', 'Jylhä', 'Jänis', 'Jäppinen', 'Järvelä', 'Jääskeläinen',
-        'Kaakko', 'Kaikkonen', 'Kainulainen', 'Kaista', 'Kaivola', 'Kakkola', 'Kakkonen', 'Kalinainen', 'Kalkkinen', 'Kalliala', 'Kallio', 'Kaillomäki', 'Kalmo', 'Kalvo', 'Kamari', 'Kamppinen', 'Kanala', 'Kangaskorte', 'Kangassalo', 'Kannelmaa', 'Kannelmäki', 'Kantele', 'Kantola', 'Kapanen', 'Karalahti', 'Karhu', 'Karjalainen', 'Karpela', 'Karppinen', 'Karukoski', 'Karvonen', 'Katainen', 'Kataja', 'Kauhala', 'Kaukovaara', 'Kauppala', 'Kauppinen', 'Kaurismäki', 'Kekkonen', 'Kerava', 'Kerttula', 'Keskinen', 'Keskioja', 'Ketola', 'Ketonen', 'Kettula', 'Kieli', 'Kiianen', 'Kiille', 'Kimalainen', 'Kiiski', 'Kinnula', 'Kinnunen', 'Kiskonen', 'Kissala', 'Kivi', 'Kiviniemi', 'Kivistö', 'Koirala', 'Koivisto', 'Koivula', 'Koivulehto', 'Koivuniemi', 'Kokkonen', 'Kolehmainen', 'Komulainen', 'Konttinen', 'Kontunen', 'Korhonen', 'Koriseva', 'Kortesjärvi', 'Koskela', 'Koskelainen', 'Kosonen', 'Kotanen', 'Koukkula', 'Kouvonen', 'Kovalainen', 'Krapu', 'Krekelä', 'Kujala', 'Kujanpää', 'Kukkala', 'Kukkamäki', 'Kukkonen', 'Kultala', 'Kumpula', 'Kumpulainen', 'Kunnas', 'Kuoppala', 'Kuosmanen', 'Kurkela', 'Kurki', 'Kuusijärvi', 'Kyllönen', 'Kynsijärvi', 'Kynsilehto', 'Kärki', 'Kärkkäinen',
-        'Laakkola', 'Laakkonen', 'Laakso', 'Laaksonen', 'Laatikainen', 'Lahdenpää', 'Laine', 'Lainela', 'Lakka', 'Lampinen', 'Lappalainen', 'Lassinen', 'Laurila', 'Lauronen', 'Lavola', 'Lehmälä', 'Lehtimäki', 'Lehtinen', 'Lehtisalo', 'Lehto', 'Lehtonen', 'Leino', 'Lepistö', 'Lepomäki', 'Leppilampi', 'Leppäkorpi', 'Leppälä', 'Leppävirta', 'Leskinen', 'Liimatainen', 'Lind', 'Linnala', 'Linnamäki', 'Lippo', 'Litmanen', 'Litvala', 'Liukkonen', 'Loiri', 'Lukkari', 'Lumme', 'Luoma', 'Luukkonen', 'Lyly', 'Lyytikäinen', 'Lähteenmäki', 'Lämsä',
-        'Maahinen', 'Made', 'Maijala', 'Makkonen', 'Malmi', 'Malmivaara', 'Mannila', 'Manninen', 'Mannonen', 'Mansikka-aho', 'Mansikkaoja', 'Marila', 'Marjala', 'Marjamäki', 'Marjola', 'Marjomaa', 'Marjonen', 'Markkanen', 'Markkula', 'Markuksela', 'Markus', 'Martikainen', 'Marttinen', 'Masala', 'Masanen', 'Matomäki', 'Mattila', 'Maunula', 'Maunola', 'Melasniemi', 'Merelä', 'Merilä', 'Meriläinen', 'Merimaa', 'Metsoja', 'Metsälampi', 'Metsäoja', 'Mielonen', 'Miettinen', 'Mikkola', 'Mikkonen', 'Muhonen', 'Mujunen', 'Murola', 'Mustapää', 'Mustonen', 'Muurinen', 'Myllymäki', 'Myllypuro', 'Myllys', 'Mylläri', 'Mäenpää', 'Mäkelä', 'Mäki', 'Mäkinen', 'Mäntylä', 'Määttä', 'Möttönen',
-        'Naula', 'Naulapää', 'Neuvonen', 'Nevala', 'Niemelä', 'Niemi', 'Nieminen', 'Niemistö', 'Niinimaa', 'Niinistö', 'Niiranen', 'Nikkanen', 'Nikkilä', 'Nikula', 'Nikulainen', 'Niskala', 'Nisukangas', 'Niukkanen', 'Nokelainen', 'Nokkonen', 'Notkonen', 'Nousiainen', 'Nukka', 'Nummelin', 'Nuotio', 'Nurkkala', 'Nurmela', 'Nurmi', 'Nurminiemi', 'Nurminen', 'Nuutti', 'Nykänen', 'Nyman', 'Närvälä', 'Näätänen',
-        'Oikkonen', 'Oikonen', 'Oinonen', 'Oja', 'Ojala', 'Ojamäki', 'Ojanen', 'Ojaniemi', 'Oksala', 'Oksanen', 'Ollikainen', 'Ollila', 'Ollinen', 'Oravainen', 'Oravala', 'Otsamo', 'Outinen', 'Ovaska',
-        'Paajanen', 'Paakkanen', 'Paananen', 'Paasikivi', 'Paasilinna', 'Paasonen', 'Paavola', 'Pahajoki', 'Pahkasalo', 'Pajumäki', 'Pajunen', 'Pakarinen', 'Pakkala', 'Pakola', 'Pallas', 'Paloheimo', 'Palola', 'Palomäki', 'Parkkonen', 'Pekkala', 'Pekkarinen', 'Pelkonen', 'Peltomaa', 'Pennanen', 'Pennilä', 'Pentikäinen', 'Penttilä', 'Perniö', 'Pesola', 'Pesonen', 'Peuranen', 'Peuraniemi', 'Pietilä', 'Piippola', 'Piirainen', 'Pikkarainen', 'Pirttijärvi', 'Pirttikangas', 'Pitkämäki', 'Pohtamo', 'Porkkala', 'Poronen', 'Poropudas', 'Puhakainenä', 'Puhakka', 'Pukkila', 'Pulli', 'Puolakka', 'Puuperä', 'Pyykkö', 'Pyykkönen', 'Päivälä', 'Päivärinta', 'Pääkkönen', 'Pöllönen', 'Pöntinen', 'Pöysti',
-        'Raappana', 'Raatikainen', 'Raatila', 'Rahka', 'Rahkala', 'Raiskio', 'Raitanen', 'Raittila', 'Rajamäki', 'Ramu', 'Ranta', 'Rantamaa', 'Rapala', 'Rasila', 'Rasmus', 'Rauhala', 'Rauhanen', 'Rautaporras', 'Rautavirta', 'Rautio', 'Rehu', 'Reinikainen', 'Reinikka', 'Rekomaa', 'Repo', 'Repola', 'Riihimäki', 'Riikonen', 'Rimmanen', 'Rinne', 'Rinta', 'Rintamäki', 'Ristilä', 'Ritari', 'Rokko', 'Ronkainen', 'Roponen', 'Ruhanen', 'Rumpunen', 'Runtti', 'Ruohoniemi', 'Ruonala', 'Ruonansuu', 'Ruotsalainen', 'Ruuhonen', 'Ruuskari', 'Ruusula', 'Ruutti', 'Ryhänen', 'Ryti', 'Ryysyläinen', 'Räikkönen', 'Räisänen', 'Räsänen',
-        'Saanila', 'Saarela', 'Saarenheimo', 'Saari', 'Saarikivi', 'Saarnio', 'Saarnivaara', 'Saastamoinen', 'Saikkonen', 'Saksala', 'Salenius', 'Salmela', 'Salmelainen', 'Salo', 'Salolainen', 'Salonen', 'Saloranta', 'Samulin', 'Sannala', 'Santanen', 'Saraste', 'Sarasvuo', 'Saukko', 'Savioja', 'Savolainen', 'Selänne', 'Seppelin', 'Seppänen', 'Seppälä', 'Servo', 'Setänen', 'Siekkinen', 'Sievinen', 'Sihvonen', 'Siira', 'Siltonen', 'Sikala', 'Silakka', 'Sillanpää', 'Siltala', 'Silvennoinen', 'Simo', 'Simonen', 'Sinnemäki', 'Sipilä', 'Sipola', 'Sirkesalo', 'Sirviö', 'Raiski', 'Soikkeli', 'Soini', 'Sonninen', 'Soppela', 'Sorajoki', 'Sormunen', 'Sorsa', 'Suhonen', 'Suikkala', 'Summanen', 'Suomela', 'Suominen', 'Suosalo', 'Susiluoto', 'Sutinen', 'Suuronen', 'Suutarinen', 'Suvela', 'Sydänmäki', 'Syrjä', 'Syrjälä', 'Säkkinen', 'Särkkä',
-        'Taavettila', 'Taavila', 'Taavitsainen', 'Taipale', 'Takkala', 'Takkula', 'Tamminen', 'Tammisto', 'Tanskanen', 'Tapio', 'Tapola', 'Tarvainen', 'Taskinen', 'Tastula', 'Tauriainen', 'Tenkanen', 'Teppo', 'Tervo', 'Tervonen', 'Teräsniska', 'Tiainen', 'Tiilikainen', 'Timonen', 'Toijala', 'Toikkanen', 'Toivanen', 'Tokkola', 'Tolonen', 'Torkkeli', 'Tuisku', 'Tukiainen', 'Tulkki', 'Tuomela', 'Tuominen', 'Tuomisto', 'Tuppurainen', 'Turpeinen', 'Turunen', 'Tuutti', 'Tynkkynen', 'Typpö', 'Tyrninen', 'Törrö', 'Törrönen',
-        'Ukkola', 'Ulvila', 'Unhola', 'Uosukainen', 'Urhonen', 'Uronen', 'Urpalainen', 'Urpilainen', 'Utriainen', 'Uusikari', 'Uusikylä', 'Uusisalmi', 'Uusitalo',
-        'Vaara', 'Vahala', 'Vahanen', 'Vahvanen', 'Vainio', 'Valjakka', 'Valo', 'Valtanen', 'Vanhanen', 'Vanhoja', 'Varjus', 'Vartiainen', 'Vasala', 'Vauhkonen', 'Veijonen', 'Veini', 'Vennala', 'Vennamo', 'Vepsäläinen', 'Vesa', 'Vesuri', 'Veteläinen', 'Vierikko', 'Vihtanen', 'Viikate', 'Viinanen', 'Viinikka', 'Vilhola', 'Viljanen', 'Vilkkula', 'Vilpas', 'Virkkula', 'Virkkunen', 'Virolainen', 'Virtala', 'Voutilainen', 'Vuokko', 'Vuorenpää', 'Vuorikoski', 'Vuorinen', 'Vähälä', 'Väisälä', 'Väisänen', 'Välimaa', 'Välioja', 'Väyrynen', 'Väätänen',
-        'Wettenranta', 'Wiitanen', 'Wirtanen', 'Wiskari',
-        'Ylijälä', 'Yliannala', 'Ylijoki', 'Ylikangas', 'Ylioja', 'Ylitalo', 'Ylppö', 'Yläjoki', 'Yrjänen', 'Yrjänä', 'Yrjölä', 'Yrttiaho', 'Yömaa',
-        'Äijälä', 'Ämmälä', 'Änäkkälä', 'Äyräs', 'Äärynen',
-        'Översti', 'Öysti', 'Öörni'
-    );
-
-    protected static $titleMale = array('Hra.', 'Tri.');
-
-    protected static $titleFemale = array('Rva.', 'Nti.', 'Tri.');
-    
-     /**
-     * National Personal Identity Number (Henkilötunnus)
-     * @link http://www.finlex.fi/fi/laki/ajantasa/2010/20100128
-     * @param \DateTime $birthdate
-     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
-     * @return string on format DDMMYYCZZZQ, where DDMMYY is the date of birth, C the century sign, ZZZ the individual number and Q the control character (checksum)
+    /**
+     * {@link} http://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EC%9D%B8%EA%B5%AC%EC%88%9C_%EC%84%B1%EC%94%A8_%EB%AA%A9%EB%A1%9D
      */
-    public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null)
-    {
-        $checksumCharacters = '0123456789ABCDEFHJKLMNPRSTUVWXY';
-
-        if (!$birthdate) {
-            $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
-        }
-        $datePart = $birthdate->format('dmy');
-
-        switch ((int)($birthdate->format('Y')/100)) {
-            case 18:
-                $centurySign = '+';
-                break;
-            case 19:
-                $centurySign = '-';
-                break;
-            case 20:
-                $centurySign = 'A';
-                break;
-            default:
-                throw new \InvalidArgumentException('Year must be between 1800 and 2099 inclusive.');
-        }
-
-        $randomDigits = self::numberBetween(0, 89);
-        if ($gender && $gender == static::GENDER_MALE) {
-            if ($randomDigits === 0) {
-                $randomDigits .= static::randomElement(array(3,5,7,9));
-            } else {
-                $randomDigits .= static::randomElement(array(1,3,5,7,9));
-            }
-        } elseif ($gender && $gender == static::GENDER_FEMALE) {
-            if ($randomDigits === 0) {
-                $randomDigits .= static::randomElement(array(2,4,6,8));
-            } else {
-                $randomDigits .= static::randomElement(array(0,2,4,6,8));
-            }
-        } else {
-            if ($randomDigits === 0) {
-                $randomDigits .= self::numberBetween(2, 9);
-            } else {
-                $randomDigits .= (string)static::numerify('#');
-            }
-        }
-        $randomDigits = str_pad($randomDigits, 3, '0', STR_PAD_LEFT);
-
-        $checksum = $checksumCharacters[(int)($datePart . $randomDigits) % strlen($checksumCharacters)];
-
-        return $datePart . $centurySign . $randomDigits . $checksum;
-    }
+    protected static $lastName = array(
+        '김', '이', '박', '최', '정', '강', '조', '윤', '장', '임', '오', '한', '신', '서', '권', '황', '안', '송', '류', '홍',
+        '전', '고', '문', '손', '양', '배', '조', '백', '허', '남', '심', '유', '노', '하', '전', '정', '곽', '성', '차', '유',
+        '구', '우', '주', '임', '나', '신', '민', '진', '지', '엄', '원', '채', '강', '천', '양', '공', '현', '방', '변', '함',
+        '노', '염', '여', '추', '변', '도', '석', '신', '소', '선', '주', '설', '방', '마', '정', '길', '위', '연', '표', '명',
+        '기', '금', '왕', '반', '옥', '육', '진', '인', '맹', '제', '탁', '모', '남궁', '여', '장', '어', '유', '국', '은', '편',
+    );
 }
