@@ -2,56 +2,49 @@
 
 @section('content')
     <div class="container">
-
-        @include('frontend._search')
-
         <div class="row">
 
             <div class="col-md-12">
-                @forelse ($posts as $post)
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            {{ $post->title }} - <small>by {{ $post->user->name }}</small>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2>
+                            Tags
 
-                            <span class="pull-right">
-                                {{ $post->created_at->toDayDateTimeString() }}
-                            </span>
-                        </div>
+                            <a href="{{ url('admin/tags/create') }}" class="btn btn-default pull-right">Create New</a>
+                        </h2>
+                    </div>
 
-                        <div class="panel-body">
-                            <p>{{ str_limit($post->body, 200) }}</p>
-                            <p>
-                                Tags:
-                                @forelse ($post->tags as $tag)
-                                    <span class="label label-default">{{ $tag->name }}</span>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($tags as $tag)
+                                    <tr>
+                                        <td>{{ $tag->name }}</td>
+                                        <td>
+                                            <a href="{{ url("/admin/tags/{$tag->id}/edit") }}" class="btn btn-xs btn-info">Edit</a>
+                                            <a href="{{ url("/admin/tags/{$tag->id}") }}" data-method="DELETE" data-token="{{ csrf_token() }}" data-confirm="Are you sure?" class="btn btn-xs btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
                                 @empty
-                                    <span class="label label-danger">No tag found.</span>
+                                    <tr>
+                                        <td colspan="2">No tag available.</td>
+                                    </tr>
                                 @endforelse
-                            </p>
-                            <p>
-                                <span class="btn btn-sm btn-success">{{ $post->category->name }}</span>
-                                <span class="btn btn-sm btn-info">Comments <span class="badge">{{ $post->comments_count }}</span></span>
+                            </tbody>
+                        </table>
 
-                                <a href="{{ url("/posts/{$post->id}") }}" class="btn btn-sm btn-primary">See more</a>
-                            </p>
-                        </div>
+                        {!! $tags->links() !!}
+
                     </div>
-                @empty
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Not Found!!</div>
-
-                        <div class="panel-body">
-                            <p>Sorry! No post found.</p>
-                        </div>
-                    </div>
-                @endforelse
-
-                <div align="center">
-                    {!! $posts->appends(['search' => request()->get('search')])->links() !!}
                 </div>
-
             </div>
 
-        </dev>
-    </dev>
+        </div>
+    </div>
 @endsection

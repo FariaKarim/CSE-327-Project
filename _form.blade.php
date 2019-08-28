@@ -1,16 +1,11 @@
-<div class="panel panel-default">
-    <div class="panel-heading">Write your comment</div>
+<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+    {!! Form::label('name', 'Name', ['class' => 'col-md-2 control-label']) !!}
 
-    <div class="panel-body">
-        {!! Form::open(['url' => "posts/{$post->id}/comment"]) !!}
-            <div class="form-group">
-                {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => 3, 'required']) !!}
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">
-                    Reply
-                </button>
-            </div>
-        {!! Form::close() !!}
+    <div class="col-md-8">
+        {!! Form::text('name', null, ['class' => 'form-control', 'required', 'autofocus']) !!}
+
+        <span class="help-block">
+            <strong>{{ $errors->first('name') }}</strong>
+        </span>
     </div>
 </div>
