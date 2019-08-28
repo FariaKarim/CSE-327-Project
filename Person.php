@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\de_AT;
+namespace Faker\Provider\fi_FI;
 
 class Person extends \Faker\Provider\Person
 {
@@ -8,113 +8,138 @@ class Person extends \Faker\Provider\Person
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}} {{suffix}}',
-        '{{titleMale}} {{firstNameMale}} {{lastName}} {{suffix}}',
     );
 
     protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}} {{suffix}}',
-        '{{titleFemale}} {{firstNameFemale}} {{lastName}} {{suffix}}',
     );
 
-    /**
-         * 60 most popular names in 1985, 1995, 2005 and 2015
-         * {@link} http://www.statistik.at/wcm/idc/idcplg?IdcService=GET_PDF_FILE&RevisionSelectionMethod=LatestReleased&dDocName=021130
-         **/
     protected static $firstNameMale = array(
-        'Adrian', 'Alexander', 'Andreas', 'Anton',
-        'Ben', 'Benedikt', 'Benjamin', 'Bernd', 'Bernhard',
-        'Christian', 'Christoph', 'Christopher', 'Clemens',
-        'Daniel', 'David', 'Dominik',
-        'Elias', 'Emil', 'Erik',
-        'Fabian', 'Fabio', 'Felix', 'Finn', 'Florian', 'Franz',
-        'Gabriel', 'Georg', 'Gerald', 'Gerhard', 'Gernot', 'Gregor', 'Günther',
-        'Hannes', 'Harald', 'Helmut', 'Herbert',
-        'Jakob', 'Jan', 'Johann', 'Johannes', 'Jonas', 'Jonathan', 'Josef', 'Joseph', 'Julian', 'Justin', 'Jürgen',
-        'Karl', 'Kevin', 'Kilian', 'Klaus', 'Konstantin',
-        'Leo', 'Leon', 'Lorenz', 'Luca', 'Luis', 'Lukas',
-        'Manfred', 'Manuel', 'Marc', 'Marcel', 'Marco', 'Mario', 'Markus', 'Martin', 'Marvin', 'Matteo', 'Matthias', 'Max', 'Maximilian', 'Michael', 'Moritz',
-        'Nico', 'Nicolas', 'Niklas', 'Noah',
-        'Oliver', 'Oskar',
-        'Pascal', 'Patrick', 'Patrik', 'Paul', 'Peter', 'Philipp',
-        'Ralph', 'Raphael', 'Reinhard', 'René', 'Richard', 'Robert', 'Roland', 'Roman',
-        'Samuel', 'Sandro', 'Sascha', 'Sebastian', 'Simon', 'Stefan',
-        'Theo', 'Theodor', 'Thomas', 'Tim', 'Tobias',
-        'Valentin', 'Vincent',
-        'Werner', 'Wolfgang',
+         'Aleksi', 'Anssi', 'Antero', 'Antti', 'Ari', 'Arttu', 'Daniel', 'Eero', 'Eetu', 'Elias', 'Elmo', 'Emil', 'Erkki',
+        'Hampus', 'Hannu', 'Harri', 'Heikki', 'Helmi', 'Henri', 'Hermanni', 'Ilja', 'Jaakko', 'Jake', 'Jani', 'Janne',
+        'Jari', 'Jarno', 'Jere', 'Jeremy', 'Jesper', 'Jesse', 'Jimi', 'Joakim', 'Joel', 'Joona', 'Joonas', 'Juha',
+        'Juho', 'Jukka', 'Julius', 'Jussi', 'Justus', 'Juuso', 'Kalle', 'Kasperi', 'Konsta', 'Kristian', 'Lassi', 'Leevi',
+        'Leo', 'Levin', 'Luca', 'Lukas', 'Magnus', 'Marko', 'Markus', 'Matias', 'Matti', 'Miika', 'Mika', 'Mikael',
+        'Mikko', 'Neo', 'Nico', 'Niklas', 'Niko', 'Oliver', 'Oskari', 'Ossi', 'Otto', 'Paavo', 'Pasi', 'Patrik',
+        'Paulus', 'Peetu', 'Pekka', 'Pertti', 'Petri', 'Petteri', 'Pyry', 'Rami', 'Rasmus', 'Riku', 'Risto', 'Roope',
+        'Saku', 'Sami', 'Samu', 'Samuel', 'Samuli', 'Santeri', 'Taneli', 'Tatu', 'Teemu', 'Teppo', 'Tero', 'Timo',
+        'Tomi', 'Tommi', 'Topi', 'Touko', 'Tuomas', 'Tuomo', 'Tuukka', 'Tuukka', 'Valtteri', 'Veli', 'Viljo', 'Ville',
+        'Aake', 'Aapeli', 'Aapo', 'Aappo', 'Aarni', 'Aaro', 'Aatto', 'Aatu', 'Akseli', 'Aku', 'Antton', 'Artturi',
+        'Aune', 'Beeda', 'Briitta', 'Eeli', 'Eelis', 'Eemeli', 'Ekku', 'Eljas', 'Erkko', 'Iiro', 'Ilmari', 'Isto',
+        'Jirko', 'Joonatan', 'Jore', 'Junnu', 'Jusu', 'Kaste', 'Kauto', 'Luukas', 'Nuutti', 'Onni', 'Osmo', 'Pekko',
+        'Sampo', 'Santtu', 'Sauli', 'Simo', 'Sisu', 'Teijo', 'Unto', 'Urho', 'Veeti', 'Veikko', 'Vilho', 'Werneri', 'Wiljami',
+
     );
 
-    /**
-         * 60 most popular names in 1985, 1995, 2005 and 2015
-         * {@link} http://www.statistik.at/wcm/idc/idcplg?IdcService=GET_PDF_FILE&RevisionSelectionMethod=LatestReleased&dDocName=021130
-         **/
     protected static $firstNameFemale = array(
-        'Alexandra', 'Alexandrea', 'Algelika', 'Alina', 'Amelie', 'Andrea', 'Angelina', 'Anita', 'Anja', 'Anna', 'Anna-Lena', 'Annika', 'Astrid',
-        'Barbara', 'Bettina', 'Bianca', 'Birgit',
-        'Carina', 'Caroline', 'Celina', 'Chiara', 'Christina', 'Christine', 'Clara', 'Claudia', 'Cornelia',
-        'Daniela', 'Denise', 'Doris',
-        'Elena', 'Elisa', 'Elisabeth', 'Ella', 'Emely', 'Emilia', 'Emily', 'Emma', 'Eva', 'Eva-Maria',
-        'Franziska',
-        'Hanna', 'Hannah', 'Helena',
-        'Ines', 'Iris', 'Isabel', 'Isabella',
-        'Jacqueline', 'Jacquline', 'Jana', 'Janine', 'Jasmin', 'Jennifer', 'Jessica', 'Johanna', 'Julia',
-        'Karin', 'Katharina', 'Katrin', 'Kerstin',
-        'Lara', 'Larissa', 'Laura', 'Lea', 'Lena', 'Leonie', 'Lilly', 'Lina', 'Lisa', 'Livia', 'Luisa',
-        'Magdalena', 'Maja', 'Manuela', 'Maria', 'Marie', 'Marion', 'Marlene', 'Martina', 'Melanie', 'Melina', 'Mia', 'Michaela', 'Michelle', 'Miriam', 'Mona', 'Monika',
-        'Nadine', 'Natalie', 'Nicole', 'Nina', 'Nora',
-        'Patricia', 'Paula', 'Petra', 'Pia',
-        'Rebecca', 'Rosa',
-        'Sabine', 'Sabrina', 'Sandra', 'Sarah', 'Selina', 'Silvia', 'Simone', 'Sonja', 'Sophia', 'Sophie', 'Stefanie', 'Susanne',
-        'Tamara', 'Tanja', 'Theresa',
-        'Valentina', 'Valerie', 'Vanessa', 'Verena', 'Viktoria',
-        'Yvonne',
+        'Aada', 'Ada', 'Aina', 'Aino', 'Aki', 'Aliisa', 'Amalia', 'Amanda', 'Amelia', 'Amira', 'Anissa', 'Anita', 'Anna',
+        'Anne', 'Anni', 'Anniina', 'Annu', 'Anu', 'Asta', 'Atte', 'Atte', 'Aura', 'Aurora', 'Bella', 'Cara',
+        'Celina', 'Christa', 'Christel', 'Clara', 'Cornelia', 'Dani', 'Eija', 'Elea', 'Elina', 'Elisa', 'Elise', 'Ella',
+        'Ellen', 'Elma', 'Emilia', 'Emma', 'Emmi', 'Enna', 'Erja', 'Esa', 'Essi', 'Eva', 'Eveliina', 'Fanni',
+        'Fiona', 'Hanna', 'Heidi', 'Heli', 'Helinä', 'Henna', 'Hilda', 'Hilja', 'Hilla', 'Hilma', 'Iida', 'Iina',
+        'Iiris', 'Ilona', 'Inka', 'Inkeri', 'Inna', 'Isabella', 'Jade', 'Jami', 'Janette', 'Janika', 'Janina', 'Janita',
+        'Janna', 'Janni', 'Jasmiina', 'Jenna', 'Jenni', 'Jessica', 'Johanna', 'Joni', 'Jonna', 'Julia', 'Juulia', 'Kaija',
+        'Karla', 'Karri', 'Kati', 'Katja', 'Katri', 'Kia', 'Kimi', 'Kirsi', 'Krista', 'Lari', 'Laura', 'Lauri',
+        'Lea', 'Lila', 'Linnea', 'Lotta', 'Lumina', 'Maarit', 'Maia', 'Maija', 'Maiju', 'Maisa', 'Mari', 'Maria',
+        'Meeri', 'Meri', 'Mette', 'Mia', 'Milla', 'Mimi', 'Mimosa', 'Minna', 'Mira', 'Mirella', 'Miska', 'Nadja',
+        'Natalia', 'Nea', 'Neea', 'Nella', 'Nia', 'Niina', 'Noora', 'Olga', 'Olivia', 'Oona', 'Outi', 'Paula',
+        'Pauliina', 'Petra', 'Pia', 'Piia', 'Pinja', 'Päivi', 'Reeta', 'Reetta', 'Riikka', 'Riina', 'Ritva', 'Roni',
+        'Ronja', 'Sanna', 'Sari', 'Satu', 'Seija', 'Sirpa', 'Siru', 'Susanna', 'Tanja', 'Tara', 'Taru', 'Tea',
+        'Terhi', 'Tiia', 'Tiina', 'Tiiu', 'Tinja', 'Veera', 'Vili', 'Vilma', 'Wilma', 'Aamu', 'Aliina', 'Annilotta',
+        'Eerika', 'Eeva', 'Eevi', 'Eliina', 'Elviira', 'Emmaliina', 'Enni', 'Ennika', 'Helmiina', 'Henniina',
+        'Hertta', 'Hilppa', 'Iia', 'Iita', 'Jadessa', 'Jemina', 'Jenika', 'Jermia', 'Jooa', 'Juttamari', 'Kaisla',
+        'Kaisu', 'Loviisa', 'Malla', 'Martta', 'Matleena', 'Miina', 'Mimmu', 'Minea', 'Minttu', 'Mirva', 'Nelli', 'Ninni',
+        'Oliivia', 'Peppi', 'Pihla', 'Pirkko', 'Riia', 'Roosa', 'Taika', 'Venla', 'Viivi', 'Vilja',
     );
 
-    /**
-         * Top 500 Names from a phone directory (February 2004)
-         * {@link} https://de.wiktionary.org/wiki/Verzeichnis:Deutsch/Liste_der_h%C3%A4ufigsten_Nachnamen_Deutschlands
-         **/
     protected static $lastName = array(
-        'Abraham', 'Achleitner', 'Adam', 'Aichinger', 'Aigner', 'Albrecht', 'Altmann', 'Amann', 'Amon', 'Angerer', 'Arnold', 'Artner', 'Aschauer', 'Auer', 'Augustin', 'Auinger',
-        'Bacher', 'Bachler', 'Bachmann', 'Bader', 'Baier', 'Barth', 'Bartl', 'Bauer', 'Baumann', 'Baumgartner', 'Bayer', 'Beck', 'Beer', 'Berger', 'Bergmann', 'Bernhard', 'Bichler', 'Binder', 'Bischof', 'Bock', 'Bogner', 'Brandl', 'Brandner', 'Brandstetter', 'Brandstätter', 'Braun', 'Brenner', 'Bruckner', 'Brugger', 'Brunner', 'Buchberger', 'Buchegger', 'Bucher', 'Buchinger', 'Buchner', 'Burger', 'Burgstaller', 'Burtscher', 'Böck', 'Böhm', 'Bösch',
-        'Danner', 'Denk', 'Deutsch', 'Dietrich', 'Dobler', 'Doppler', 'Dorner', 'Draxler',
-        'Eberharter', 'Eberl', 'Ebner', 'Ecker', 'Eder', 'Edlinger', 'Egger', 'Eibl', 'Eichberger', 'Eichinger', 'Eigner', 'Erhart', 'Ernst', 'Ertl',
-        'Falkner', 'Fasching', 'Feichtinger', 'Fellner', 'Fiala', 'Fichtinger', 'Fiedler', 'Fink', 'Fischer', 'Fleischhacker', 'Forster', 'Forstner', 'Frank', 'Franz', 'Friedl', 'Friedrich', 'Fritsch', 'Fritz', 'Fröhlich', 'Frühwirth', 'Fuchs', 'Führer', 'Fürst',
-        'Gabriel', 'Gangl', 'Gartner', 'Gasser', 'Gassner', 'Geiger', 'Geisler', 'Geyer', 'Glaser', 'Glatz', 'Gmeiner', 'Grabner', 'Graf', 'Gratzer', 'Greiner', 'Grill', 'Gritsch', 'Gross', 'Groß', 'Gruber', 'Grünwald', 'Gschwandtner', 'Gutmann',
-        'Haas', 'Haberl', 'Hackl', 'Hafner', 'Hagen', 'Hager', 'Hahn', 'Haider', 'Haidinger', 'Haller', 'Hammer', 'Hammerl', 'Handl', 'Handler', 'Harrer', 'Hartl', 'Hartmann', 'Haslinger', 'Hauer', 'Hauser', 'Heindl', 'Heinrich', 'Hemetsberger', 'Herbst', 'Hermann', 'Herzog', 'Hinterberger', 'Hinteregger', 'Hinterleitner', 'Hirsch', 'Hochreiter', 'Hofbauer', 'Hofer', 'Hoffmann', 'Hofmann', 'Hofstätter', 'Holzer', 'Holzinger', 'Holzmann', 'Horvath', 'Huber', 'Huemer', 'Hufnagl', 'Humer', 'Hummer', 'Hutter', 'Hämmerle', 'Hödl', 'Höfler', 'Höller', 'Hölzl', 'Hörmann', 'Hütter',
-        'Jahn', 'Jandl', 'Janisch', 'Jovanovic', 'Jung', 'Jungwirth', 'Jäger',
-        'Kainz', 'Kaiser', 'Kaltenbrunner', 'Kapeller', 'Kargl', 'Karl', 'Karner', 'Kastner', 'Kaufmann', 'Kellner', 'Kern', 'Kerschbaumer', 'Kirchmair', 'Kirchner', 'Klammer', 'Klein', 'Klinger', 'Klug', 'Knapp', 'Knoll', 'Koch', 'Kofler', 'Kogler', 'Kohl', 'Koller', 'Kollmann', 'Konrad', 'Kopp', 'Kovacs', 'Kraft', 'Krainer', 'Kramer', 'Krammer', 'Kraus', 'Kremser', 'Krenn', 'Kreuzer', 'Kronberger', 'Kröll', 'Kugler', 'Kummer', 'Kurz', 'Köberl', 'Köck', 'Köhler', 'König',
-        'Lackner', 'Lamprecht', 'Lang', 'Langer', 'Lechner', 'Lederer', 'Leeb', 'Lehner', 'Leitgeb', 'Leitner', 'Lengauer', 'Lenz', 'Lettner', 'Lindner', 'List', 'Loidl', 'Lorenz', 'Ludwig', 'Luger', 'Lukas', 'Lutz', 'Löffler',
-        'Mader', 'Maier', 'Maierhofer', 'Mair', 'Mairhofer', 'Mandl', 'Markovic', 'Martin', 'Maurer', 'Mayer', 'Mayerhofer', 'Mayr', 'Mayrhofer', 'Meier', 'Meixner', 'Messner', 'Meyer', 'Mitterer', 'Moosbrugger', 'Moser', 'Muhr', 'Mühlbacher', 'Müller', 'Müllner',
-        'Nagl', 'Nemeth', 'Neubauer', 'Neuhauser', 'Neuhold', 'Neumann', 'Neumayer', 'Neuner', 'Neuwirth', 'Nikolic', 'Novak', 'Nowak', 'Nussbaumer', 'Nußbaumer',
-        'Ofner', 'Ortner', 'Oswald', 'Ott',
-        'Paar', 'Pacher', 'Pammer', 'Paul', 'Payer', 'Peer', 'Penz', 'Peter', 'Petrovic', 'Petz', 'Pfeffer', 'Pfeifer', 'Pfeiffer', 'Pfister', 'Pfleger', 'Pichler', 'Pilz', 'Pinter', 'Pirker', 'Plank', 'Plattner', 'Platzer', 'Pointner', 'Pokorny', 'Pollak', 'Posch', 'Prem', 'Prinz', 'Probst', 'Pucher', 'Putz', 'Pöll', 'Pölzl', 'Pöschl', 'Pühringer',
-        'Raab', 'Rabl', 'Rainer', 'Rath', 'Rauch', 'Rausch', 'Rauscher', 'Rauter', 'Rechberger', 'Redl', 'Reich', 'Reichl', 'Reindl', 'Reiner', 'Reinisch', 'Reischl', 'Reisinger', 'Reiter', 'Reiterer', 'Renner', 'Resch', 'Richter', 'Rieder', 'Riedl', 'Riedler', 'Rieger', 'Riegler', 'Rieser', 'Ritter', 'Rosenberger', 'Roth', 'Rupp',
-        'Sailer', 'Sattler', 'Sauer', 'Schachinger', 'Schachner', 'Schaffer', 'Schaller', 'Scharf', 'Schatz', 'Schauer', 'Scheiber', 'Schenk', 'Scheucher', 'Schiefer', 'Schiller', 'Schindler', 'Schlager', 'Schlögl', 'Schmid', 'Schmidt', 'Schmied', 'Schnabl', 'Schneeberger', 'Schneider', 'Schober', 'Scholz', 'Schranz', 'Schreiber', 'Schreiner', 'Schubert', 'Schuh', 'Schuller', 'Schulz', 'Schuster', 'Schwab', 'Schwaiger', 'Schwaighofer', 'Schwarz', 'Schweiger', 'Schweighofer', 'Schön', 'Schöpf', 'Schütz', 'Seebacher', 'Seidl', 'Siegl', 'Simon', 'Singer', 'Sommer', 'Sonnleitner', 'Spitzer', 'Springer', 'Stadler', 'Stangl', 'Stark', 'Staudinger', 'Steger', 'Steinbauer', 'Steinberger', 'Steindl', 'Steiner', 'Steininger', 'Steinkellner', 'Steinlechner', 'Steinwender', 'Stelzer', 'Stern', 'Steurer', 'Stocker', 'Stockinger', 'Strasser', 'Strauss', 'Strauß', 'Strobl', 'Stummer', 'Sturm', 'Stöckl', 'Stöger', 'Suppan', 'Swoboda', 'Szabo',
-        'Thaler', 'Thaller', 'Thurner', 'Tischler', 'Toth', 'Traxler', 'Trimmel', 'Trummer',
-        'Ulrich', 'Unger', 'Unterberger', 'Unterweger', 'Urban',
-        'Varga', 'Vogel', 'Vogl',
-        'Wachter', 'Wagner', 'Walch', 'Walcher', 'Wallner', 'Walter', 'Weber', 'Wechselberger', 'Wegscheider', 'Weidinger', 'Weigl', 'Weinberger', 'Weiss', 'Weiß', 'Weninger', 'Werner', 'Wieland', 'Wieser', 'Wiesinger', 'Wild', 'Wilhelm', 'Wimmer', 'Windisch', 'Winkler', 'Winter', 'Wirth', 'Wittmann', 'Wolf', 'Wurm', 'Wurzer',
-        'Zach', 'Zangerl', 'Zauner', 'Zechner', 'Zehetner', 'Zeilinger', 'Zeller', 'Zenz', 'Ziegler', 'Zimmermann', 'Zöhrer',
+        'Aakula', 'Aalto', 'Aaltonen', 'Aarnio', 'Aaronen', 'Aavikkola', 'Ahmala', 'Aho', 'Ahokas', 'Ahola', 'Ahomaa', 'Ahonen', 'Ahoniemi', 'Ahopelto', 'Ahovaara', 'Ahtila', 'Ahtiluoto', 'Ahtio', 'Ahtisaari', 'Ahto', 'Ahtola', 'Ahtonen', 'Ahtorinne', 'Aija', 'Aijala', 'Ainola', 'Aitio', 'Aitolahti', 'Aitomaa', 'Aittasalmi', 'Akkala', 'Akkanen', 'Alahuhta', 'Alajoki', 'Alajärvi', 'Alanen', 'Alatalo', 'Alasalmi', 'Alapuro', 'Alhola', 'Alijoki', 'Ankkala', 'Ankkuri', 'Annala', 'Annunen', 'Anttila', 'Anttinen', 'Anttonen', 'Ara', 'Arhila', 'Arhinmäki', 'Arhosuo', 'Arinen', 'Arjamaa', 'Arjanen', 'Arkkila', 'Armio', 'Arnio', 'Aronen', 'Arosuo', 'Arponen', 'Arvola', 'Asikainen', 'Astala', 'Attila', 'Aunela', 'Aura', 'Auramies', 'Auranen', 'Autio', 'Auvinen', 'Auvola', 'Avonius', 'Avotie',
+        'Bräysy',
+        'Davidsainen', 'Dufva',
+        'Eerikäinen', 'Eerola', 'Einel', 'Eino', 'Einola', 'Einonen', 'Ekman', 'Ekola', 'Ellilä', 'Ellinen', 'Elomaa', 'Eloharju', 'Eloranta', 'Eno', 'Enola', 'Enäjärvi', 'Erkinjuntti', 'Erkkilä', 'Erkkinen', 'Erkko', 'Erkkola', 'Ernamo', 'Erola', 'Eronen', 'Ervola', 'Eräharju', 'Erämaja', 'Eränen', 'Eskelinen', 'Eskelä', 'Eskola', 'Evelä', 'Evilä',
+        'Filppula', 'Finni', 'Frändilä', 'Fränti',
+        'Haahka', 'Haahkola', 'Haanpää', 'Haapakorpi', 'Haapala', 'Haapanen', 'Haaparanta', 'Haapasalmi', 'Haapasalo', 'Haapkylä', 'Haapoja', 'Haataja', 'Haavisto', 'Haikala', 'Haikara', 'Hakala', 'Hakkarainen', 'Hakki', 'Hakula', 'Halinen', 'Halkola', 'Halkonen', 'Halla', 'Hallaper', 'Hallapuro', 'Hallikainen', 'Hallila', 'Hallonen', 'Halme', 'Halmela', 'Halmelahti', 'Halonen', 'Halttunen', 'Hammas', 'Hanhela', 'Hanhinen', 'Hannula', 'Hannunen', 'Hapola', 'Harjamäki', 'Harju', 'Harjula', 'Harjunpää', 'Harkimo', 'Hautakangas', 'Hautakoski', 'Hautala', 'Hautamäki', 'Haverinen', 'Havukoski', 'Heikkilä', 'Heikkinen', 'Heimola', 'Heinälä', 'Heiskanen', 'Heiskari', 'Helenius', 'Helinen', 'Helismaa', 'Helmel', 'Helovirta', 'Helppolainen', 'Helstel', 'Hellgren', 'Hentinen', 'Hento', 'Hepomäki', 'Heponen', 'Herranen', 'Hervanta', 'Hervanto', 'Hekkaharju', 'Hiesu', 'Hietala', 'Hietanen', 'Hiltunen', 'Heintikainen', 'Hirvelä', 'Hirvi', 'Hirvikangas', 'Hirvonen', 'Hoikkala', 'Hoikkanen', 'Holappa', 'Holkeri', 'Hongisto', 'Honkanen', 'Hovi', 'Huhta', 'Huhtala', 'Hukkala', 'Huopainen', 'Huotari', 'Huovinen', 'Huttunen', 'Huuhka', 'Huurinainen', 'Huusko', 'Huvinen', 'Hyppölä', 'Hyppönen', 'Hytölä', 'Hyypiä', 'Hyyppä', 'Häkkinen', 'Häkämies', 'Hämäläinen', 'Hänninen', 'Härkönen',
+        'Ihalainen', 'Ikola', 'Ikonen', 'Ilmarinen', 'Ilomäki', 'Iloniemi', 'Ilvesniemi', 'Immonen', 'Inkeri', 'Inkinen', 'Isoluoma', 'Isomäki', 'Isotalo', 'Itkonen', 'Itävaara', 'Itävuori',
+        'Jaakkola', 'Jaakkonen', 'Jaakonmaa', 'Jaatinen', 'Jakkila', 'Jalonen', 'Jauhiainen', 'Jauho', 'Joenhaara', 'Johto', 'Jokelainen', 'Jokihaara', 'Jokimies', 'Jokinen', 'Jortikka', 'Joru', 'Junkkari', 'Juntti', 'Juppi', 'Jurva', 'Jurvala', 'Jurvanen', 'Jussila', 'Juustinen', 'Juuti', 'Juvanen', 'Juvonen', 'Jylhä', 'Jänis', 'Jäppinen', 'Järvelä', 'Jääskeläinen',
+        'Kaakko', 'Kaikkonen', 'Kainulainen', 'Kaista', 'Kaivola', 'Kakkola', 'Kakkonen', 'Kalinainen', 'Kalkkinen', 'Kalliala', 'Kallio', 'Kaillomäki', 'Kalmo', 'Kalvo', 'Kamari', 'Kamppinen', 'Kanala', 'Kangaskorte', 'Kangassalo', 'Kannelmaa', 'Kannelmäki', 'Kantele', 'Kantola', 'Kapanen', 'Karalahti', 'Karhu', 'Karjalainen', 'Karpela', 'Karppinen', 'Karukoski', 'Karvonen', 'Katainen', 'Kataja', 'Kauhala', 'Kaukovaara', 'Kauppala', 'Kauppinen', 'Kaurismäki', 'Kekkonen', 'Kerava', 'Kerttula', 'Keskinen', 'Keskioja', 'Ketola', 'Ketonen', 'Kettula', 'Kieli', 'Kiianen', 'Kiille', 'Kimalainen', 'Kiiski', 'Kinnula', 'Kinnunen', 'Kiskonen', 'Kissala', 'Kivi', 'Kiviniemi', 'Kivistö', 'Koirala', 'Koivisto', 'Koivula', 'Koivulehto', 'Koivuniemi', 'Kokkonen', 'Kolehmainen', 'Komulainen', 'Konttinen', 'Kontunen', 'Korhonen', 'Koriseva', 'Kortesjärvi', 'Koskela', 'Koskelainen', 'Kosonen', 'Kotanen', 'Koukkula', 'Kouvonen', 'Kovalainen', 'Krapu', 'Krekelä', 'Kujala', 'Kujanpää', 'Kukkala', 'Kukkamäki', 'Kukkonen', 'Kultala', 'Kumpula', 'Kumpulainen', 'Kunnas', 'Kuoppala', 'Kuosmanen', 'Kurkela', 'Kurki', 'Kuusijärvi', 'Kyllönen', 'Kynsijärvi', 'Kynsilehto', 'Kärki', 'Kärkkäinen',
+        'Laakkola', 'Laakkonen', 'Laakso', 'Laaksonen', 'Laatikainen', 'Lahdenpää', 'Laine', 'Lainela', 'Lakka', 'Lampinen', 'Lappalainen', 'Lassinen', 'Laurila', 'Lauronen', 'Lavola', 'Lehmälä', 'Lehtimäki', 'Lehtinen', 'Lehtisalo', 'Lehto', 'Lehtonen', 'Leino', 'Lepistö', 'Lepomäki', 'Leppilampi', 'Leppäkorpi', 'Leppälä', 'Leppävirta', 'Leskinen', 'Liimatainen', 'Lind', 'Linnala', 'Linnamäki', 'Lippo', 'Litmanen', 'Litvala', 'Liukkonen', 'Loiri', 'Lukkari', 'Lumme', 'Luoma', 'Luukkonen', 'Lyly', 'Lyytikäinen', 'Lähteenmäki', 'Lämsä',
+        'Maahinen', 'Made', 'Maijala', 'Makkonen', 'Malmi', 'Malmivaara', 'Mannila', 'Manninen', 'Mannonen', 'Mansikka-aho', 'Mansikkaoja', 'Marila', 'Marjala', 'Marjamäki', 'Marjola', 'Marjomaa', 'Marjonen', 'Markkanen', 'Markkula', 'Markuksela', 'Markus', 'Martikainen', 'Marttinen', 'Masala', 'Masanen', 'Matomäki', 'Mattila', 'Maunula', 'Maunola', 'Melasniemi', 'Merelä', 'Merilä', 'Meriläinen', 'Merimaa', 'Metsoja', 'Metsälampi', 'Metsäoja', 'Mielonen', 'Miettinen', 'Mikkola', 'Mikkonen', 'Muhonen', 'Mujunen', 'Murola', 'Mustapää', 'Mustonen', 'Muurinen', 'Myllymäki', 'Myllypuro', 'Myllys', 'Mylläri', 'Mäenpää', 'Mäkelä', 'Mäki', 'Mäkinen', 'Mäntylä', 'Määttä', 'Möttönen',
+        'Naula', 'Naulapää', 'Neuvonen', 'Nevala', 'Niemelä', 'Niemi', 'Nieminen', 'Niemistö', 'Niinimaa', 'Niinistö', 'Niiranen', 'Nikkanen', 'Nikkilä', 'Nikula', 'Nikulainen', 'Niskala', 'Nisukangas', 'Niukkanen', 'Nokelainen', 'Nokkonen', 'Notkonen', 'Nousiainen', 'Nukka', 'Nummelin', 'Nuotio', 'Nurkkala', 'Nurmela', 'Nurmi', 'Nurminiemi', 'Nurminen', 'Nuutti', 'Nykänen', 'Nyman', 'Närvälä', 'Näätänen',
+        'Oikkonen', 'Oikonen', 'Oinonen', 'Oja', 'Ojala', 'Ojamäki', 'Ojanen', 'Ojaniemi', 'Oksala', 'Oksanen', 'Ollikainen', 'Ollila', 'Ollinen', 'Oravainen', 'Oravala', 'Otsamo', 'Outinen', 'Ovaska',
+        'Paajanen', 'Paakkanen', 'Paananen', 'Paasikivi', 'Paasilinna', 'Paasonen', 'Paavola', 'Pahajoki', 'Pahkasalo', 'Pajumäki', 'Pajunen', 'Pakarinen', 'Pakkala', 'Pakola', 'Pallas', 'Paloheimo', 'Palola', 'Palomäki', 'Parkkonen', 'Pekkala', 'Pekkarinen', 'Pelkonen', 'Peltomaa', 'Pennanen', 'Pennilä', 'Pentikäinen', 'Penttilä', 'Perniö', 'Pesola', 'Pesonen', 'Peuranen', 'Peuraniemi', 'Pietilä', 'Piippola', 'Piirainen', 'Pikkarainen', 'Pirttijärvi', 'Pirttikangas', 'Pitkämäki', 'Pohtamo', 'Porkkala', 'Poronen', 'Poropudas', 'Puhakainenä', 'Puhakka', 'Pukkila', 'Pulli', 'Puolakka', 'Puuperä', 'Pyykkö', 'Pyykkönen', 'Päivälä', 'Päivärinta', 'Pääkkönen', 'Pöllönen', 'Pöntinen', 'Pöysti',
+        'Raappana', 'Raatikainen', 'Raatila', 'Rahka', 'Rahkala', 'Raiskio', 'Raitanen', 'Raittila', 'Rajamäki', 'Ramu', 'Ranta', 'Rantamaa', 'Rapala', 'Rasila', 'Rasmus', 'Rauhala', 'Rauhanen', 'Rautaporras', 'Rautavirta', 'Rautio', 'Rehu', 'Reinikainen', 'Reinikka', 'Rekomaa', 'Repo', 'Repola', 'Riihimäki', 'Riikonen', 'Rimmanen', 'Rinne', 'Rinta', 'Rintamäki', 'Ristilä', 'Ritari', 'Rokko', 'Ronkainen', 'Roponen', 'Ruhanen', 'Rumpunen', 'Runtti', 'Ruohoniemi', 'Ruonala', 'Ruonansuu', 'Ruotsalainen', 'Ruuhonen', 'Ruuskari', 'Ruusula', 'Ruutti', 'Ryhänen', 'Ryti', 'Ryysyläinen', 'Räikkönen', 'Räisänen', 'Räsänen',
+        'Saanila', 'Saarela', 'Saarenheimo', 'Saari', 'Saarikivi', 'Saarnio', 'Saarnivaara', 'Saastamoinen', 'Saikkonen', 'Saksala', 'Salenius', 'Salmela', 'Salmelainen', 'Salo', 'Salolainen', 'Salonen', 'Saloranta', 'Samulin', 'Sannala', 'Santanen', 'Saraste', 'Sarasvuo', 'Saukko', 'Savioja', 'Savolainen', 'Selänne', 'Seppelin', 'Seppänen', 'Seppälä', 'Servo', 'Setänen', 'Siekkinen', 'Sievinen', 'Sihvonen', 'Siira', 'Siltonen', 'Sikala', 'Silakka', 'Sillanpää', 'Siltala', 'Silvennoinen', 'Simo', 'Simonen', 'Sinnemäki', 'Sipilä', 'Sipola', 'Sirkesalo', 'Sirviö', 'Raiski', 'Soikkeli', 'Soini', 'Sonninen', 'Soppela', 'Sorajoki', 'Sormunen', 'Sorsa', 'Suhonen', 'Suikkala', 'Summanen', 'Suomela', 'Suominen', 'Suosalo', 'Susiluoto', 'Sutinen', 'Suuronen', 'Suutarinen', 'Suvela', 'Sydänmäki', 'Syrjä', 'Syrjälä', 'Säkkinen', 'Särkkä',
+        'Taavettila', 'Taavila', 'Taavitsainen', 'Taipale', 'Takkala', 'Takkula', 'Tamminen', 'Tammisto', 'Tanskanen', 'Tapio', 'Tapola', 'Tarvainen', 'Taskinen', 'Tastula', 'Tauriainen', 'Tenkanen', 'Teppo', 'Tervo', 'Tervonen', 'Teräsniska', 'Tiainen', 'Tiilikainen', 'Timonen', 'Toijala', 'Toikkanen', 'Toivanen', 'Tokkola', 'Tolonen', 'Torkkeli', 'Tuisku', 'Tukiainen', 'Tulkki', 'Tuomela', 'Tuominen', 'Tuomisto', 'Tuppurainen', 'Turpeinen', 'Turunen', 'Tuutti', 'Tynkkynen', 'Typpö', 'Tyrninen', 'Törrö', 'Törrönen',
+        'Ukkola', 'Ulvila', 'Unhola', 'Uosukainen', 'Urhonen', 'Uronen', 'Urpalainen', 'Urpilainen', 'Utriainen', 'Uusikari', 'Uusikylä', 'Uusisalmi', 'Uusitalo',
+        'Vaara', 'Vahala', 'Vahanen', 'Vahvanen', 'Vainio', 'Valjakka', 'Valo', 'Valtanen', 'Vanhanen', 'Vanhoja', 'Varjus', 'Vartiainen', 'Vasala', 'Vauhkonen', 'Veijonen', 'Veini', 'Vennala', 'Vennamo', 'Vepsäläinen', 'Vesa', 'Vesuri', 'Veteläinen', 'Vierikko', 'Vihtanen', 'Viikate', 'Viinanen', 'Viinikka', 'Vilhola', 'Viljanen', 'Vilkkula', 'Vilpas', 'Virkkula', 'Virkkunen', 'Virolainen', 'Virtala', 'Voutilainen', 'Vuokko', 'Vuorenpää', 'Vuorikoski', 'Vuorinen', 'Vähälä', 'Väisälä', 'Väisänen', 'Välimaa', 'Välioja', 'Väyrynen', 'Väätänen',
+        'Wettenranta', 'Wiitanen', 'Wirtanen', 'Wiskari',
+        'Ylijälä', 'Yliannala', 'Ylijoki', 'Ylikangas', 'Ylioja', 'Ylitalo', 'Ylppö', 'Yläjoki', 'Yrjänen', 'Yrjänä', 'Yrjölä', 'Yrttiaho', 'Yömaa',
+        'Äijälä', 'Ämmälä', 'Änäkkälä', 'Äyräs', 'Äärynen',
+        'Översti', 'Öysti', 'Öörni'
     );
 
-    protected static $titleMale = array('Herr', 'Dr.', 'Mag.', 'Ing.', 'Dipl.-Ing.', 'Prof.', 'Univ.Prof.');
-    protected static $titleFemale = array('Frau', 'Dr.', 'Maga.', 'Ing.', 'Dipl.-Ing.', 'Prof.', 'Univ.Prof.');
+    protected static $titleMale = array('Hra.', 'Tri.');
 
-    protected static $suffix = array('B.Sc.', 'B.A.', 'B.Eng.', 'MBA.');
-
-    /**
-     * @example 'PhD'
+    protected static $titleFemale = array('Rva.', 'Nti.', 'Tri.');
+    
+     /**
+     * National Personal Identity Number (Henkilötunnus)
+     * @link http://www.finlex.fi/fi/laki/ajantasa/2010/20100128
+     * @param \DateTime $birthdate
+     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
+     * @return string on format DDMMYYCZZZQ, where DDMMYY is the date of birth, C the century sign, ZZZ the individual number and Q the control character (checksum)
      */
-    public static function suffix()
+    public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null)
     {
-        return static::randomElement(static::$suffix);
+        $checksumCharacters = '0123456789ABCDEFHJKLMNPRSTUVWXY';
+
+        if (!$birthdate) {
+            $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
+        }
+        $datePart = $birthdate->format('dmy');
+
+        switch ((int)($birthdate->format('Y')/100)) {
+            case 18:
+                $centurySign = '+';
+                break;
+            case 19:
+                $centurySign = '-';
+                break;
+            case 20:
+                $centurySign = 'A';
+                break;
+            default:
+                throw new \InvalidArgumentException('Year must be between 1800 and 2099 inclusive.');
+        }
+
+        $randomDigits = self::numberBetween(0, 89);
+        if ($gender && $gender == static::GENDER_MALE) {
+            if ($randomDigits === 0) {
+                $randomDigits .= static::randomElement(array(3,5,7,9));
+            } else {
+                $randomDigits .= static::randomElement(array(1,3,5,7,9));
+            }
+        } elseif ($gender && $gender == static::GENDER_FEMALE) {
+            if ($randomDigits === 0) {
+                $randomDigits .= static::randomElement(array(2,4,6,8));
+            } else {
+                $randomDigits .= static::randomElement(array(0,2,4,6,8));
+            }
+        } else {
+            if ($randomDigits === 0) {
+                $randomDigits .= self::numberBetween(2, 9);
+            } else {
+                $randomDigits .= (string)static::numerify('#');
+            }
+        }
+        $randomDigits = str_pad($randomDigits, 3, '0', STR_PAD_LEFT);
+
+        $checksum = $checksumCharacters[(int)($datePart . $randomDigits) % strlen($checksumCharacters)];
+
+        return $datePart . $centurySign . $randomDigits . $checksum;
     }
 }

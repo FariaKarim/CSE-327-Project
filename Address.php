@@ -1,116 +1,85 @@
 <?php
 
-namespace Faker\Provider\de_AT;
+namespace Faker\Provider\fi_FI;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = array('###', '##', '#', '##[abc]', '#[abc]');
-
-    protected static $streetSuffixLong = array(
-        'Gasse', 'Platz', 'Ring', 'Straße', 'Weg',
+    protected static $cityPrefix = array('Pohjois', 'Etelä', 'Itä', 'Länsi', 'Uusi', 'Uus');
+    protected static $citySuffix = array('kylä', 'niemi', 'järvi', 'joki', 'lampi', 'mäki', 'vesi', 'niemi', 'harju', 'lahti', 'harju', 'salmi', 'koski', 'pudas', 'saari');
+    protected static $buildingNumber = array('####', '###', '##', '#', '#');
+    protected static $streetSuffix = array(
+        'tie', 'kuja', 'polku', 'kierros', 'kulma', 'katu', 'kaarre', 'kaari', 'rinne', 'kaarto', 'haka', 'silta', 'rinne', 'töyry'
     );
-    protected static $streetSuffixShort = array(
-        'gasse', 'platz', 'ring', 'straße', 'weg',
-    );
-
-    protected static $postcode = array('####');
-
-    protected static $cityNames = array(
-        'Allentsteig', 'Altheim', 'Althofen', 'Amstetten', 'Ansfelden', 'Attnang-Puchheim',
-        'Bad Aussee', 'Bad Hall', 'Bad Ischl', 'Bad Leonfelden', 'Bad Radkersburg', 'Bad Sankt Leonhard im Lavanttal', 'Bad Vöslau', 'Baden', 'Bärnbach', 'Berndorf', 'Bischofshofen', 'Bleiburg', 'Bludenz', 'Braunau am Inn', 'Bregenz', 'Bruck an der Leitha', 'Bruck an der Mur',
-        'Deutsch-Wagram', 'Deutschlandsberg', 'Dornbirn', 'Drosendorf-Zissersdorf 1', 'Dürnstein',
-        'Ebenfurth', 'Ebreichsdorf', 'Eferding', 'Eggenburg', 'Eisenerz', 'Eisenstadt', 'Enns',
-        'Fehring', 'Feldbach', 'Feldkirch', 'Feldkirchen', 'Ferlach', 'Fischamend', 'Frauenkirchen', 'Freistadt', 'Friedberg', 'Friesach', 'Frohnleiten', 'Fürstenfeld',
-        'Gallneukirchen', 'Gänserndorf', 'Geras', 'Gerasdorf bei Wien', 'Gföhl', 'Gleisdorf', 'Gloggnitz', 'Gmünd', 'Gmünd in Kärnten', 'Gmunden', 'Graz', 'Grein', 'Grieskirchen', 'Groß-Enzersdorf', 'Groß-Gerungs', 'Groß-Siegharts', 'Güssing',
-        'Haag', 'Hainburg an der Donau', 'Hainfeld', 'Hall in Tirol', 'Hallein', 'Hardegg', 'Hartberg', 'Heidenreichstein', 'Hermagor-Pressegger See', 'Herzogenburg', 'Hohenems', 'Hollabrunn', 'Horn',
-        'Imst', 'Innsbruck',
-        'Jennersdorf', 'Judenburg',
-        'Kapfenberg', 'Kindberg', 'Kirchdorf an der Krems', 'Kirchschlag in der Buckligen Welt', 'Kitzbühel', 'Klagenfurt', 'Klosterneuburg', 'Knittelfeld', 'Köflach', 'Korneuburg', 'Krems an der Donau', 'Kufstein',
-        'Laa an der Thaya', 'Laakirchen', 'Landeck', 'Langenlois', 'Leibnitz', 'Leoben', 'Leonding', 'Lienz', 'Liezen', 'Lilienfeld', 'Linz', 'Litschau',
-        'Maissau', 'Mank', 'Mannersdorf am Leithagebirge', 'Marchegg', 'Marchtrenk', 'Mariazell', 'Mattersburg', 'Mattighofen', 'Mautern an der Donau', 'Melk', 'Mistelbach an der Zaya', 'Mödling', 'Murau', 'Mureck', 'Mürzzuschlag',
-        'Neufeld an der Leitha', 'Neulengbach', 'Neumarkt am Wallersee', 'Neunkirchen', 'Neusiedl am See',
-        'Oberndorf bei Salzburg', 'Oberpullendorf', 'Oberwart', 'Oberwälz',
-        'Perg', 'Peuerbach', 'Pinkafeld', 'Pöchlarn', 'Poysdorf', 'Pregarten', 'Pulkau', 'Purbach am Neusiedler See', 'Purkersdorf',
-        'Raabs an der Thaya', 'Radenthein', 'Radstadt', 'Rattenberg', 'Retz', 'Ried im Innkreis', 'Rohrbach in Oberösterreich', 'Rottenmann', 'Rust',
-        'Saalfelden am Steinernen Meer', 'Salzburg', 'Sankt Andrä im Lavanttal', 'Sankt Johann im Pongau', 'Sankt Pölten', 'Sankt Valentin', 'Sankt Veit an der Glan', 'Schärding', 'Scheibbs', 'Schladming', 'Schrattenthal', 'Schrems', 'Schwanenstadt', 'Schwaz', 'Schwechat', 'Seekirchen am Wallersee', 'Spittal an der Drau', 'Stadtschlaining', 'Steyr', 'Steyregg', 'Stockerau', 'Straßburg',
-        'Ternitz', 'Traiskirchen', 'Traismauer', 'Traun', 'Trieben', 'Trofaiach', 'Tulln an der Donau',
-        'Villach', 'Vils', 'Vöcklabruck', 'Voitsberg', 'Völkermarkt',
-        'Waidhofen an der Thaya', 'Waidhofen an der Ybbs', 'Weitra', 'Weiz', 'Wels', 'Wien', 'Wiener Neustadt', 'Wieselburg', 'Wilhelmsburg', 'Wolfsberg', 'Wolkersdorf', 'Wörgl',
-        'Ybbs an der Donau',
-        'Zell am See', 'Zeltweg', 'Zistersdorf', 'Zwettl',
-    );
-
+    protected static $postcode = array('#####');
     protected static $state = array(
-        'Burgenland', 'Kärnten', 'Niederösterreich', 'Oberösterreich', 'Salzburg', 'Steiermark', 'Tirol', 'Vorarlberg', 'Wien'
+        'Ahvenanmaa', 'Etelä-Karjala', 'Etelä-Pohjanmaa', 'Etelä-Savo', 'Kainuu', 'Kanta-Häme', 'Keski-Pohjanmaa', 'Keski-Suomi', 'Kymenlaakso', 'Lappi', 'Pirkanmaa', 'Pohjanmaa', 'Pohjois-Karjala', 'Pohjois-Pohjanmaa', 'Pohjois-Savo', 'Päijät-Häme', 'Satakunta', 'Uusimaa', 'Varsinais-Suomi'
     );
-
     protected static $country = array(
-        'Afghanistan', 'Alandinseln', 'Albanien', 'Algerien', 'Amerikanisch-Ozeanien', 'Amerikanisch-Samoa', 'Amerikanische Jungferninseln', 'Andorra', 'Angola', 'Anguilla', 'Antarktis', 'Antigua und Barbuda', 'Argentinien', 'Armenien', 'Aruba', 'Aserbaidschan', 'Australien', 'Ägypten', 'Äquatorialguinea', 'Äthiopien', 'Äußeres Ozeanien',
-        'Bahamas', 'Bahrain', 'Bangladesch', 'Barbados', 'Belarus', 'Belgien', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivien', 'Bosnien und Herzegowina', 'Botsuana', 'Bouvetinsel', 'Brasilien', 'Britische Jungferninseln', 'Britisches Territorium im Indischen Ozean', 'Brunei Darussalam', 'Bulgarien', 'Burkina Faso', 'Burundi',
-        'Chile', 'China', 'Cookinseln', 'Costa Rica', 'Côte d’Ivoire',
-        'Demokratische Republik Kongo', 'Demokratische Volksrepublik Korea', 'Deutschland', 'Dominica', 'Dominikanische Republik', 'Dschibuti', 'Dänemark',
-        'Ecuador', 'El Salvador', 'Eritrea', 'Estland', 'Europäische Union',
-        'Falklandinseln', 'Fidschi', 'Finnland', 'Frankreich', 'Französisch-Guayana', 'Französisch-Polynesien', 'Französische Süd- und Antarktisgebiete', 'Färöer',
-        'Gabun', 'Gambia', 'Georgien', 'Ghana', 'Gibraltar', 'Grenada', 'Griechenland', 'Grönland', 'Guadeloupe', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea-Bissau', 'Guyana',
-        'Haiti', 'Heard- und McDonald-Inseln', 'Honduras',
-        'Indien', 'Indonesien', 'Irak', 'Iran', 'Irland', 'Island', 'Isle of Man', 'Israel', 'Italien',
-        'Jamaika', 'Japan', 'Jemen', 'Jersey', 'Jordanien',
-        'Kaimaninseln', 'Kambodscha', 'Kamerun', 'Kanada', 'Kap Verde', 'Kasachstan', 'Katar', 'Kenia', 'Kirgisistan', 'Kiribati', 'Kokosinseln', 'Kolumbien', 'Komoren', 'Kongo', 'Kroatien', 'Kuba', 'Kuwait',
-        'Laos', 'Lesotho', 'Lettland', 'Libanon', 'Liberia', 'Libyen', 'Liechtenstein', 'Litauen', 'Luxemburg',
-        'Madagaskar', 'Malawi', 'Malaysia', 'Malediven', 'Mali', 'Malta', 'Marokko', 'Marshallinseln', 'Martinique', 'Mauretanien', 'Mauritius', 'Mayotte', 'Mazedonien', 'Mexiko', 'Mikronesien', 'Monaco', 'Mongolei', 'Montenegro', 'Montserrat', 'Mosambik', 'Myanmar',
-        'Namibia', 'Nauru', 'Nepal', 'Neukaledonien', 'Neuseeland', 'Nicaragua', 'Niederlande', 'Niederländische Antillen', 'Niger', 'Nigeria', 'Niue', 'Norfolkinsel', 'Norwegen', 'Nördliche Marianen',
-        'Oman', 'Osttimor', 'Österreich',
-        'Pakistan', 'Palau', 'Palästinensische Gebiete', 'Panama', 'Papua-Neuguinea', 'Paraguay', 'Peru', 'Philippinen', 'Pitcairn', 'Polen', 'Portugal', 'Puerto Rico',
-        'Republik Korea', 'Republik Moldau', 'Ruanda', 'Rumänien', 'Russische Föderation', 'Réunion',
-        'Salomonen', 'Sambia', 'Samoa', 'San Marino', 'Saudi-Arabien', 'Schweden', 'Schweiz', 'Senegal', 'Serbien', 'Serbien und Montenegro', 'Seychellen', 'Sierra Leone', 'Simbabwe', 'Singapur', 'Slowakei', 'Slowenien', 'Somalia', 'Sonderverwaltungszone Hongkong', 'Sonderverwaltungszone Macao', 'Spanien', 'Sri Lanka', 'St. Barthélemy', 'St. Helena', 'St. Kitts und Nevis', 'St. Lucia', 'St. Martin', 'St. Pierre und Miquelon', 'St. Vincent und die Grenadinen', 'Sudan', 'Suriname', 'Svalbard und Jan Mayen', 'Swasiland', 'Syrien', 'São Tomé und Príncipe', 'Südafrika', 'Südgeorgien und die Südlichen Sandwichinseln',
-        'Tadschikistan', 'Taiwan', 'Tansania', 'Thailand', 'Togo', 'Tokelau', 'Tonga', 'Trinidad und Tobago', 'Tschad', 'Tschechische Republik', 'Tunesien', 'Turkmenistan', 'Turks- und Caicosinseln', 'Tuvalu', 'Türkei',
-        'Uganda', 'Ukraine', 'Unbekannte oder ungültige Region', 'Ungarn', 'Uruguay', 'Usbekistan',
-        'Vanuatu', 'Vatikanstadt', 'Venezuela', 'Vereinigte Arabische Emirate', 'Vereinigte Staaten', 'Vereinigtes Königreich', 'Vietnam',
-        'Wallis und Futuna', 'Weihnachtsinsel', 'Westsahara',
-        'Zentralafrikanische Republik', 'Zypern',
+        'Afganistan', 'Alankomaat', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua ja Barbuda', 'Argentiina', 'Armenia', 'Australia', 'Azerbaidẑan',
+        'Bahama', 'Bahrain', 'Bangladesh', 'Barbados', 'Belgia', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia ja Hertsegovina', 'Botswana', 'Brasilia', 'Brunel', 'Bulgaria', 'Burkina Faso', 'Burundi',
+        'Chile', 'Costa Rica',
+        'Djibouti', 'Dominica', 'Dominikaaninen tasavalta',
+        'Ecuador', 'Egypti', 'El Salvador', 'Eritrea', 'Espanja', 'Etelä-Afrikka', 'Etelä-Korea', 'Etelä-Sudan', 'Etiopia', 'Fidẑi', 'Filippiinit',
+        'Gabon', 'Gambia', 'Georgia', 'Ghana', 'Grenada', 'Guatemala', 'Guinea-Bissau', 'Guinea', 'Guyana',
+        'Haiti', 'Honduras',
+        'Indonesia', 'Intia', 'Irak', 'Iran', 'Irlanti', 'Islanti', 'Israel', 'Italia', 'Itä-Timor', 'Itävalta',
+        'Jamaika', 'Japani', 'Jemen', 'Jordania',
+        'Kambodẑa', 'Kamerun', 'Kanada', 'Kap Verde', 'Kazakstan', 'Kenia', 'Keski-Afrikan tasavalta', 'Kiina', 'Kirgisia', 'Kiribati', 'Kolumbia', 'Komorit', 'Kongon demokraattinen tasavalta', 'Kongon tasavalta', 'Kosovo', 'Kreikka', 'Kroatia', 'Kuuba', 'Kuwait', 'Kypros',
+        'Laos', 'Latvia', 'Lesotho', 'Libanon', 'Liberai', 'Libya', 'Lichtenstein', 'Liettua', 'Luxemburg',
+        'Madagaskar', 'Makedonia', 'Malawi', 'Malediivit', 'Malesia', 'Mali', 'Malta', 'Marokko', 'Marshallinsaaret', 'Mauritania', 'Mauritius', 'Meksiko', 'Mikronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Mosambik', 'Myanmar',
+        'Namibia', 'Nauru', 'Nepal', 'Nicaragua', 'Nigeria', 'Niger', 'Norja', 'Norsunluurannikko',
+        'Oman',
+        'Pakistan', 'Palau', 'Panama', 'Papua-Uusi-Guinea', 'Paraguay', 'Peru', 'Pohjois-Korea', 'Portugali', 'Puola', 'Päiväntasaajan Guinea',
+        'Qatar',
+        'Ranska', 'Romania', 'Ruanda', 'Ruotsi',
+        'Saint Kitts ja Nevis', 'Saint Lucia', 'Saint Vincent ja Grenadiinit', 'Saksa', 'Salomonsaaret', 'Sambia', 'Samoa', 'San Marino', 'São Tomé ja Príncipe', 'Saudi-Arabia', 'Senegal', 'Serbia', 'Seychellit', 'Sierra Leone', 'Singapore', 'Slovakia', 'Somalia', 'Sri Lanka', 'Sudan', 'Suomi', 'Suriname', 'Swazimaa', 'Sveitsi', 'Syyria',
+        'Tadẑikistan', 'Tansania', 'Tanska', 'Thaimaa', 'Togo', 'Tonga', 'Trinidad ja Tobago', 'Tšad', 'Tšekki', 'Tunisia', 'Turkki', 'Turkmenistan', 'Tuvalu',
+        'Uganda', 'Ukraina', 'Unkari', 'Uruguay', 'Uusi-Seelanti', 'Uzbekistan',
+        'Valko-Venäjä', 'Vanuatu', 'Vatikaanivaltio', 'Venzuela', 'Venäjä', 'Vietnam', 'Viro',
+        'Yhdistyneet Arabiemiirikunnat', 'Yhdistynyt kuningaskunta', 'Yhdysvallat',
+        'Zimbabwe'
     );
-
     protected static $cityFormats = array(
-        '{{cityName}}',
+        '{{cityPrefix}}-{{firstName}}{{citySuffix}}',
+        '{{cityPrefix}}-{{firstName}}',
+        '{{firstName}}{{citySuffix}}',
+        '{{lastName}}{{citySuffix}}',
     );
-
     protected static $streetNameFormats = array(
-        '{{lastName}}{{streetSuffixShort}}',
-        '{{firstName}}-{{lastName}}-{{streetSuffixLong}}'
+        '{{firstName}}{{streetSuffix}}',
+        '{{lastName}}{{streetSuffix}}'
     );
-
     protected static $streetAddressFormats = array(
         '{{streetName}} {{buildingNumber}}',
+        '{{streetName}} {{buildingNumber}} {{secondaryAddress}}'
     );
     protected static $addressFormats = array(
+        "{{streetAddress}}\n{{postcode}} {{city}}, {{state}}",
         "{{streetAddress}}\n{{postcode}} {{city}}",
     );
+    protected static $secondaryAddressFormats = array('###');
 
-    public function cityName()
+    /**
+     * @example 'Pohjois'
+     */
+    public static function cityPrefix()
     {
-        return static::randomElement(static::$cityNames);
-    }
-
-    public function streetSuffixShort()
-    {
-        return static::randomElement(static::$streetSuffixShort);
-    }
-
-    public function streetSuffixLong()
-    {
-        return static::randomElement(static::$streetSuffixLong);
+        return static::randomElement(static::$cityPrefix);
     }
 
     /**
-     * @example 'Wien'
+     * @example '123'
+     */
+    public static function secondaryAddress()
+    {
+        return static::numerify(static::randomElement(static::$secondaryAddressFormats));
+    }
+
+    /**
+     * @example 'Pohjois-Pohjanmaa'
      */
     public static function state()
     {
         return static::randomElement(static::$state);
-    }
-
-    public static function buildingNumber()
-    {
-        return static::regexify(self::numerify(static::randomElement(static::$buildingNumber)));
     }
 }

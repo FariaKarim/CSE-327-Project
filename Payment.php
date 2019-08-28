@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\de_AT;
+namespace Faker\Provider\fi_FI;
 
 class Payment extends \Faker\Provider\Payment
 {
@@ -12,7 +12,7 @@ class Payment extends \Faker\Provider\Payment
      * @param  integer $length      total length without country code and 2 check digits
      * @return string
      */
-    public static function bankAccountNumber($prefix = '', $countryCode = 'AT', $length = null)
+    public static function bankAccountNumber($prefix = '', $countryCode = 'FI', $length = null)
     {
         return static::iban($countryCode, $prefix, $length);
     }
