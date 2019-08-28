@@ -1,0 +1,47 @@
+.verticalLineOne {
+	position: absolute;
+	margin-left: 920px;
+  margin-top: 50px;
+  border-left: 3px solid black;
+  height: 210px;
+}
+.boxParagraphOne{
+	width: 300px; 
+	position: absolute;
+	
+  margin-left: 940px;
+  margin-top: 80px;
+  word-wrap: break-word;
+}
+
+.verticalLineTwo {
+	position: absolute;
+	margin-left: 230px;
+  margin-top: 350px;
+  border-left: 3px solid black;
+  height: 210px;
+}
+.boxParagraphTwo{
+	width: 300px; 
+	position: absolute;
+	
+  margin-left: -80px;
+  margin-top: 380px;
+  word-wrap: break-word;
+}
+
+.verticalLineThree {
+	position: absolute;
+	margin-left: 920px;
+  margin-top: 650px;
+  border-left: 3px solid black;
+  height: 210px;
+}
+.boxParagraphThree{
+	width: 300px; 
+	position: absolute;
+	
+  margin-left: 940px;
+  margin-top: 680px;
+  word-wrap: break-word;
+}
