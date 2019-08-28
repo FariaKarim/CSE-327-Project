@@ -1,87 +1,45 @@
 <?php
 
-namespace Faker\Test\Provider;
+namespace Faker\Test\Provider\zh_TW;
 
-use Faker\Provider\Person;
 use Faker\Generator;
+use Faker\Provider\zh_TW\Person;
 use PHPUnit\Framework\TestCase;
 
 class PersonTest extends TestCase
 {
     /**
-     * @dataProvider firstNameProvider
+     * @var Generator
      */
-    public function testFirstName($gender, $expected)
+    private $faker;
+
+    public function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
-        $this->assertContains($faker->firstName($gender), $expected);
-    }
-
-    public function firstNameProvider()
-    {
-        return array(
-            array(null, array('John', 'Jane')),
-            array('foobar', array('John', 'Jane')),
-            array('male', array('John')),
-            array('female', array('Jane')),
-        );
-    }
-
-    public function testFirstNameMale()
-    {
-        $this->assertContains(Person::firstNameMale(), array('John'));
-    }
-
-    public function testFirstNameFemale()
-    {
-        $this->assertContains(Person::firstNameFemale(), array('Jane'));
+        $this->faker = $faker;
     }
 
     /**
-     * @dataProvider titleProvider
+     * @see https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%B0%91%E8%BA%AB%E5%88%86%E8%AD%89
      */
-    public function testTitle($gender, $expected)
+    public function testPersonalIdentityNumber()
     {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $this->assertContains($faker->title($gender), $expected);
-    }
+        $id = $this->faker->personalIdentityNumber;
 
-    public function titleProvider()
-    {
-        return array(
-            array(null, array('Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.')),
-            array('foobar', array('Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.')),
-            array('male', array('Mr.', 'Dr.', 'Prof.')),
-            array('female', array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.')),
-        );
-    }
+        $firstChar = substr($id, 0, 1);
+        $codesString = Person::$idBirthplaceCode[$firstChar] . substr($id, 1);
 
-    public function testTitleMale()
-    {
-        $this->assertContains(Person::titleMale(), array('Mr.', 'Dr.', 'Prof.'));
-    }
+        // After transfer the first alphabet word into 2 digit number, there should be totally 11 numbers
+        $this->assertRegExp("/^[0-9]{11}$/", $codesString);
 
-    public function testTitleFemale()
-    {
-        $this->assertContains(Person::titleFemale(), array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.'));
-    }
+        $total = 0;
+        $codesArray = str_split($codesString);
+        foreach ($codesArray as $key => $code) {
+            $total += $code * Person::$idDigitValidator[$key];
+        }
 
-    public function testLastNameReturnsDoe()
-    {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $this->assertEquals($faker->lastName(), 'Doe');
-    }
-
-    public function testNameReturnsFirstNameAndLastName()
-    {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $this->assertContains($faker->name(), array('John Doe', 'Jane Doe'));
-        $this->assertContains($faker->name('foobar'), array('John Doe', 'Jane Doe'));
-        $this->assertContains($faker->name('male'), array('John Doe'));
-        $this->assertContains($faker->name('female'), array('Jane Doe'));
+        // Validate
+        $this->assertEquals(0, ($total % 10));
     }
 }

@@ -1,13 +1,17 @@
 <?php
 
-namespace Faker\Test\Provider;
+namespace Faker\Test\Provider\uk_UA;
 
 use Faker\Generator;
-use Faker\Provider\Address;
+use Faker\Provider\uk_UA\Address;
 use PHPUnit\Framework\TestCase;
 
 class AddressTest extends TestCase
 {
+
+    /**
+     * @var Generator
+     */
     private $faker;
 
     public function setUp()
@@ -17,31 +21,61 @@ class AddressTest extends TestCase
         $this->faker = $faker;
     }
 
-    public function testLatitude()
+    public function testPostCodeIsValid()
     {
-        $latitude = $this->faker->latitude();
-        $this->assertInternalType('float', $latitude);
-        $this->assertGreaterThanOrEqual(-90, $latitude);
-        $this->assertLessThanOrEqual(90, $latitude);
+        $main = '[0-9]{5}';
+        $pattern = "/^($main)|($main-[0-9]{3})+$/";
+        $postcode = $this->faker->postcode;
+        $this->assertRegExp($pattern, $postcode, 'Post code ' . $postcode . ' is wrong!');
     }
 
-    public function testLongitude()
+    public function testEmptySuffixes()
     {
-        $longitude = $this->faker->longitude();
-        $this->assertInternalType('float', $longitude);
-        $this->assertGreaterThanOrEqual(-180, $longitude);
-        $this->assertLessThanOrEqual(180, $longitude);
+        $this->assertEmpty($this->faker->citySuffix, 'City suffix should be empty!');
+        $this->assertEmpty($this->faker->streetSuffix, 'Street suffix should be empty!');
     }
 
-    public function testCoordinate()
+    public function testStreetCyrOnly()
     {
-        $coordinate = $this->faker->localCoordinates();
-        $this->assertInternalType('array', $coordinate);
-        $this->assertInternalType('float', $coordinate['latitude']);
-        $this->assertGreaterThanOrEqual(-90, $coordinate['latitude']);
-        $this->assertLessThanOrEqual(90, $coordinate['latitude']);
-        $this->assertInternalType('float', $coordinate['longitude']);
-        $this->assertGreaterThanOrEqual(-180, $coordinate['longitude']);
-        $this->assertLessThanOrEqual(180, $coordinate['longitude']);
+        $pattern = "/[0-9А-ЩЯІЇЄЮа-щяіїєюьIVXCM][0-9А-ЩЯІЇЄЮа-щяіїєюь \'-.]*[А-Яа-я.]/u";
+        $streetName = $this->faker->streetName;
+        $this->assertSame(
+            preg_match($pattern, $streetName),
+            1,
+            'Street name ' . $streetName . ' is wrong!'
+        );
+    }
+
+    public function testCityNameCyrOnly()
+    {
+        $pattern = "/[А-ЩЯІЇЄЮа-щяіїєюь][0-9А-ЩЯІЇЄЮа-щяіїєюь \'-]*[А-Яа-я]/u";
+        $city = $this->faker->city;
+        $this->assertSame(
+            preg_match($pattern, $city),
+            1,
+            'City name ' . $city . ' is wrong!'
+        );
+    }
+
+    public function testRegionNameCyrOnly()
+    {
+        $pattern = "/[А-ЩЯІЇЄЮ][А-ЩЯІЇЄЮа-щяіїєюь]*а$/u";
+        $regionName = $this->faker->region;
+        $this->assertSame(
+            preg_match($pattern, $regionName),
+            1,
+            'Region name ' . $regionName . ' is wrong!'
+        );
+    }
+
+    public function testCountryCyrOnly()
+    {
+        $pattern = "/[А-ЩЯІЇЄЮа-щяіїєюьIVXCM][А-ЩЯІЇЄЮа-щяіїєюь \'-]*[А-Яа-я.]/u";
+        $country = $this->faker->country;
+        $this->assertSame(
+            preg_match($pattern, $country),
+            1,
+            'Country name ' . $country . ' is wrong!'
+        );
     }
 }

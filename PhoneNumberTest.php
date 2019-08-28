@@ -1,10 +1,9 @@
 <?php
 
-namespace Faker\Test\Provider;
+namespace Faker\Test\Provider\uk_UA;
 
 use Faker\Generator;
-use Faker\Calculator\Luhn;
-use Faker\Provider\PhoneNumber;
+use Faker\Provider\uk_UA\PhoneNumber;
 use PHPUnit\Framework\TestCase;
 
 class PhoneNumberTest extends TestCase
@@ -24,13 +23,14 @@ class PhoneNumberTest extends TestCase
 
     public function testPhoneNumberFormat()
     {
-        $number = $this->faker->e164PhoneNumber();
-        $this->assertRegExp('/^\+[0-9]{11,}$/', $number);
+        $pattern = "/((\+38)(((\(\d{3}\))\d{7}|(\(\d{4}\))\d{6})|(\d{8})))|0\d{9}/";
+        $phoneNumber = $this->faker->phoneNumber;
+        $this->assertSame(
+            preg_match($pattern, $phoneNumber),
+            1,
+            'Phone number format ' . $phoneNumber . ' is wrong!'
+        );
+
     }
 
-    public function testImeiReturnsValidNumber()
-    {
-        $imei = $this->faker->imei();
-        $this->assertTrue(Luhn::isValid($imei));
-    }
 }

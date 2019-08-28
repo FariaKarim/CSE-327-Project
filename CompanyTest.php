@@ -1,10 +1,9 @@
 <?php
 
-namespace Faker\Test\Provider;
+namespace Faker\Test\Provider\zh_TW;
 
 use Faker\Generator;
-use Faker\Provider\Company;
-use Faker\Provider\Lorem;
+use Faker\Provider\zh_TW\Company;
 use PHPUnit\Framework\TestCase;
 
 class CompanyTest extends TestCase
@@ -18,14 +17,11 @@ class CompanyTest extends TestCase
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
-        $faker->addProvider(new Lorem($faker));
         $this->faker = $faker;
     }
 
-    public function testJobTitle()
+    public function testVAT()
     {
-        $jobTitle = $this->faker->jobTitle();
-        $pattern = '/^[A-Za-z]+$/';
-        $this->assertRegExp($pattern, $jobTitle);
+        $this->assertEquals(8, floor(log10($this->faker->VAT) + 1));
     }
 }
