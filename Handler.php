@@ -1,65 +1,95 @@
 <?php
+/**
+ * Whoops - php errors for cool kids
+ * @author Filipe Dobreira <http://github.com/filp>
+ */
 
-namespace App\Exceptions;
+namespace Whoops\Handler;
 
-use Exception;
-use Illuminate\Auth\AuthenticationException;
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Whoops\Exception\Inspector;
+use Whoops\RunInterface;
 
-class Handler extends ExceptionHandler
+/**
+ * Abstract implementation of a Handler.
+ */
+abstract class Handler implements HandlerInterface
 {
-    /**
-     * A list of the exception types that should not be reported.
-     *
-     * @var array
+    /*
+     Return constants that can be returned from Handler::handle
+     to message the handler walker.
      */
-    protected $dontReport = [
-        \Illuminate\Auth\AuthenticationException::class,
-        \Illuminate\Auth\Access\AuthorizationException::class,
-        \Symfony\Component\HttpKernel\Exception\HttpException::class,
-        \Illuminate\Database\Eloquent\ModelNotFoundException::class,
-        \Illuminate\Session\TokenMismatchException::class,
-        \Illuminate\Validation\ValidationException::class,
-    ];
+    const DONE         = 0x10; // returning this is optional, only exists for
+                               // semantic purposes
+    /**
+     * The Handler has handled the Throwable in some way, and wishes to skip any other Handler.
+     * Execution will continue.
+     */
+    const LAST_HANDLER = 0x20;
+    /**
+     * The Handler has handled the Throwable in some way, and wishes to quit/stop execution
+     */
+    const QUIT         = 0x30;
 
     /**
-     * Report or log an exception.
-     *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
-     *
-     * @param  \Exception  $exception
-     * @return void
+     * @var RunInterface
      */
-    public function report(Exception $exception)
+    private $run;
+
+    /**
+     * @var Inspector $inspector
+     */
+    private $inspector;
+
+    /**
+     * @var \Throwable $exception
+     */
+    private $exception;
+
+    /**
+     * @param RunInterface $run
+     */
+    public function setRun(RunInterface $run)
     {
-        parent::report($exception);
+        $this->run = $run;
     }
 
     /**
-     * Render an exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $exception
-     * @return \Illuminate\Http\Response
+     * @return RunInterface
      */
-    public function render($request, Exception $exception)
+    protected function getRun()
     {
-        return parent::render($request, $exception);
+        return $this->run;
     }
 
     /**
-     * Convert an authentication exception into an unauthenticated response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Auth\AuthenticationException  $exception
-     * @return \Illuminate\Http\Response
+     * @param Inspector $inspector
      */
-    protected function unauthenticated($request, AuthenticationException $exception)
+    public function setInspector(Inspector $inspector)
     {
-        if ($request->expectsJson()) {
-            return response()->json(['error' => 'Unauthenticated.'], 401);
-        }
+        $this->inspector = $inspector;
+    }
 
-        return redirect()->guest(route('login'));
+    /**
+     * @return Inspector
+     */
+    protected function getInspector()
+    {
+        return $this->inspector;
+    }
+
+    /**
+     * @param \Throwable $exception
+     */
+    public function setException($exception)
+    {
+        $this->exception = $exception;
+    }
+
+    /**
+     * @return \Throwable
+     */
+    protected function getException()
+    {
+        return $this->exception;
     }
 }
