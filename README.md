@@ -1,3 +1,16 @@
+# GoodLife
+
+*  Install xampp and composer for windows
+*  Run "composer install" after cloning the repo
+*  Make a copy of .env.example and rename it .env
+*  Create a database with your suitable name and insert the database name, username and password in .env file
+*  Run "php artisan key:generate"
+*  Run "php artisan config:cache"
+*  Run "php artisan cache:clear"
+*  Run "php artisan route:cache"
+*  Run "php artisan migrate --seed"
+*  Run "php artisan serve" and check by "localhost:8000" url
+
 # EmailValidator
 [![Build Status](https://travis-ci.org/egulias/EmailValidator.png?branch=master)](https://travis-ci.org/egulias/EmailValidator) [![Coverage Status](https://coveralls.io/repos/egulias/EmailValidator/badge.png?branch=master)](https://coveralls.io/r/egulias/EmailValidator?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/egulias/EmailValidator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/egulias/EmailValidator/?branch=master) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/22ba6692-9c02-42e5-a65d-1c5696bfffc6/small.png)](https://insight.sensiolabs.com/projects/22ba6692-9c02-42e5-a65d-1c5696bfffc6)
 =============================
