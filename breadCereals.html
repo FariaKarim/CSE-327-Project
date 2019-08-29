@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  background-image: url("images/breadCereal.jpg");
+  background-repeat: no-repeat;
+  background-position:top;
+}
+
+.vertical-menu a.active {
+  background-color: green;
+  color: white;
+}
+
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 30px;
+  text-decoration: none;
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color:brown;
+}
+
+</style>
+</head>
+<body>
+
+    <h1 style="color:black;">BREADS & CEREALS</h1>
+    <div class="vertical-menu">
+            <a href="foodList.html" class="active">Back to Menu</a>
+    </div>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="#"><h4>Bagel ( 1 average )</h4> <p>310 cals(100g)/energy content(Medium)</p></a></li>
+  <li><a href="#"><h4>Biscuit digestives</h4> <p>480 cals(100g)/energy content(High)</p></a></li>
+  <li><a href="#"><h4>Jaffa cake</h4> <p>370 cals(100g)/energy content(Med-High)</p></a></li>
+  <li><a href="#"><h4>Bread white (thick slice)</h4> <p>240 cals(100g)/energy content(Medium)</p></a></li>
+  <li><a href="#"><h4>Bread wholemeal (thick)</h4> <p>220 cals(100g)/energy content(Low-Medium)</p></a></li>
+  <li><a href="#"><h4>Noodles (boiled)</h4> <p>70 cals(100g)/energy content(Low-Medium)</p></a></li>
+  <li><a href="#"><h4>Pasta ( normal boiled )</h4> <p>110 cals(100g)/energy content(Low-Medium)</p></a></li>
+  <li><a href="#"><h4>Potatoes** (boiled)</h4> <p>70 cals(100g)/energy content(Low-Medium)</p></a></li>
+  <li><a href="#"><h4>Rice (white boiled)</h4> <p>140 cals(100g)/energy content(Low-Medium)</p></a></li>
+  <li><a href="#"><h4>Rice (egg-fried)</h4> <p>200 cals(100g)/energy content(High)</p></a></li>
+  
+ 
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
