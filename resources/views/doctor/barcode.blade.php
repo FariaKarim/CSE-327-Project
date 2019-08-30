@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Barcode</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body style="margin: 0; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#fff)) no-repeat; font-size: 13px;">
+        <form id="form">
+            <div style="background-color: #fff; border-bottom: 1px solid #ddd;">
+                <input type="file" id="file" style="width: 280px; line-height: 18px; padding: 20px;" />
+            </div>
+
+            <p id="isbn" style="font-family: Helvetica, sans-serif; width: 320px; line-height: 18px; padding: 0; text-align: center;">
+                Please select a sharp photo of a barcode above
+            </p>
+
+            <canvas id="canvas" width="2000" height="1500" style="width: 320px; height: 240px;"></canvas>
+        </form>
+        <script src="{{asset('js/barcode.js')}}"></script>
+        <script>
+
+            try {
+
+                document.getElementById('file').onchange = function() {
+
+                    document.getElementById('isbn').innerHTML = 'Processing…';
+
+                    var image = new Image();
+
+                    image.onload = function () {
+
+                        var canvas = document.getElementById('canvas');
+                        var width = canvas.width;
+                        var height = canvas.height;
+
+                        var context = canvas.getContext('2d');
+                        context.drawImage(image, 0, 0, width, height);
+
+                        var barcode = new Barcode(context, width, height);
+                        var line = barcode.scan();
+
+                        if (line) {
+
+                            document.getElementById('isbn').innerHTML = line.isbn;
+                            barcode.print(line);
+
+                        } else {
+                            document.getElementById('isbn').innerHTML = 'Sorry, could not find barcode… please try again';
+                        }
+                    };
+
+                    image.src = window.webkitURL.createObjectURL(this.files[0]);
+                };
+
+            } catch (e) {
+                alert(e);
+            }
+
+        </script>
+    </body>
+</html>
